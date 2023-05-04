@@ -10,8 +10,8 @@ class CreateDeals < ActiveRecord::Migration[7.0]
       t.datetime :submission_date
       t.datetime :start_date
       t.datetime :end_date
-      t.references :business, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.references :business, null: true, foreign_key: true
+      t.references :user, null: true, foreign_key: true
 
       t.timestamps
     end
