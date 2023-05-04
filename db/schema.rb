@@ -34,8 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_29_074056) do
     t.datetime "submission_date"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.bigint "business_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "business_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_deals_on_business_id"
