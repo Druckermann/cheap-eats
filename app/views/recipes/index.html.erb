@@ -1,8 +1,14 @@
 <h1>Recipes</h1>
 
 <% @recipes.each do |recipe| %>
+  <div class="recipe-card">
     <h2><%= recipe.name %></h2>
+    <h4><%= recipe.description %></h4>
+    <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary" %>
+  </div>
+  </div>
 <% end %>
+
 
 <%= link_to "Back to choice", choice_path %>
 <%= link_to "Go to home", root_path %>
