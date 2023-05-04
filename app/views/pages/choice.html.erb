@@ -1,4 +1,29 @@
+<div class="container">
+  <h2>Find a deal</h2>
+  <%= form_tag(deals_path, method: :get) do %>
+    <%= label_tag(:postcode, "Enter your postcode:") %>
+    <%= text_field_tag(:postcode) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+<div class="container">
+  <h2>Upload a deal</h2>
+  <%= link_to "Add a deal I have found", new_deal_path, class: "btn btn-secondary" %>
+</div>
+
+<div class="navbar-container">
+  <div class="navbar">
+    <a href="/" class="secondary-button">Home</a>
+    <a href="/deals" class="secondary-button">Deals</a>
+    <a href="/recipes" class="secondary-button">Recipes</a>
+    <a href="/profile" class="secondary-button">Profile</a>
+  </div>
+</div>
+
+
+<!--
 <h1>This is choice page</h1>
 
 <%= link_to "Go to recipes", recipes_path %>
-<%= link_to "Go to deals", deals_path %>
+-->
