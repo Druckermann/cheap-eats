@@ -1,8 +1,19 @@
-<h1 class="d-flex justify-content-center">Deals index</h1>
+<div class="d-flex justify-content-center">
+  <h1>Deals index</h1>
+</div>
 
-  <% @deals.each do |deal| %>
-    <%= deal.name %>
-  <% end %>
+<div class="container" style="text-align: center;">
+  <div class="row">
+    <% @deals.each do |deal| %>
+      <%= deal.name %>
+      <%# AT: image text Fri 05/05 %>
+      <% if deal.image.attached? %>
+        <%= cl_image_tag deal.image.key %>
+      <% end %>
+      <%# ############# %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to "Go to home", root_path %>
 <%= link_to "Go to new deal", new_deal_path %>
