@@ -1,33 +1,17 @@
 <div class="d-flex justify-content-center">
   <h1>New deal</h1>
 </div>
-<div class="container">
-  <%= simple_form_for(@deal) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-  <div>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-secondary" %>
-  </div>
-  <% end %>
-</div>
 
-<<<<<<< Updated upstream
 <div class="container">
   <%= simple_form_for(@deal) do |f| %>
     <%= f.input :name %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
     <%= f.input :price %>
-    <%= f.input :description placeholder:"Include details such as location, RRP, time you saw the deal" %>
+    <%= f.input :description, placeholder:"Include details such as location, RRP, time you saw the deal" %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.submit %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class:"btn btn-secondary" %>
   <% end %>
 </div>
-=======
->>>>>>> Stashed changes
 <%= link_to "Go to deals index", deals_path %>
