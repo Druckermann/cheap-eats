@@ -1,19 +1,20 @@
-<div class="d-flex justify-content-center">
+<div class="text-center">
   <h1>Deals index</h1>
 </div>
 
-<div class="container" style="text-align: center;">
-  <div class="row">
-    <% @deals.each do |deal| %>
-      <%= deal.name %>
-      <%# AT: image text Fri 05/05 %>
-      <% if deal.image.attached? %>
-        <%= cl_image_tag deal.image.key %>
-      <% end %>
-      <%# ############# %>
-    <% end %>
-  </div>
+<div>
+  <%= link_to "Go to new deal", new_deal_path %>
 </div>
 
-<%= link_to "Go to home", root_path %>
-<%= link_to "Go to new deal", new_deal_path %>
+<div class="container" style="text-align: center;">
+  <% @deals.each do |deal| %>
+    <div class="row">
+      <div class="card">
+        <%= deal.name %>
+        <% if deal.image.attached? %>
+          <%= cl_image_tag deal.image.key, class:"mx-auto card-image", style: "border-radius: 2%;" "box-shadow: 5px 5px 3px grey; border: 2px solid black;" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
