@@ -1,18 +1,26 @@
-<h1>Recipes</h1>
+<div class="d-flex justify-content-center">
+  <h1>Recipes</h1>
+</div>
 
-<% @recipes.each do |recipe| %>
-  <div class="recipe-card">
-    <h2><%= recipe.name %></h2>
-    <h4><%= recipe.description %></h4>
-    <%# AT: image text Fri 05/05 %>
-      <% if recipe.image.attached? %>
-        <%= cl_image_tag recipe.image.key %>
-      <% end %>
-      <%# ############# %>
+<div class="container" style="text-align: center;">
+  <%= form_tag recipes_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>
+    <%= submit_tag "Search", name: nil, class: "btn btn-secondary"%>
+  <% end %>
+
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <h2><%= recipe.name %></h2>
+      <h4><%= recipe.description %></h4>
+      <%# AT: image text Fri 05/05 %>
+        <% if recipe.image.attached? %>
+          <%= cl_image_tag recipe.image.key %>
+        <% end %>
+        <%# ############# %>
+    </div>
     <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary" %>
-  </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 
 <%= link_to "Back to choice", choice_path %>

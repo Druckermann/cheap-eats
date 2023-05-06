@@ -40,6 +40,12 @@ Business.create(id: 3, name: "Coles Richmond Icon", street: "150/160 Swan St", s
 
 Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibition St", suburb: "South Melbourne", state: "VIC", postcode: 3000)
 
+Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", suburb: "Melbourne", state: "VIC", postcode: 3000)
+
+Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008)
+
+Business.create(id: 7, name: "Aldi Abbotsford, ", street: "313/325 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
+
 ###########################################################################
 # Deals
 deal_1 = Deal.create(name: "Chicken Drumsticks", category: "Meat", price: "1.99", description: "Found a great deal on chicken drumsticks for $1.99/kg at Woolworths Abbotsford!", start_date: "2023-05-03", end_date: "2023-05-10", user_id: 2, submission_date: "2023-05-03", url: "https://www.woolworths.com.au/shop/productdetails/23208/chicken-legs-drumsticks")
@@ -63,7 +69,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/d
 deal_4.image.attach(io: file, filename: 'jack-cheese.jpg')
 deal_4.save
 
-deal_5 = Deal.create(name: "Broccoli", category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi in Melbourne!", start_date: "2023-05-01", end_date: "2023-05-07", user_id: 4, submission_date: "2023-05-02")
+deal_5 = Deal.create(name: "Broccoli", category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi Abbotsford!", start_date: "2023-05-01", end_date: "2023-05-07", user_id: 4, submission_date: "2023-05-02")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/broccoli_octwgp.png')
 deal_5.image.attach(io: file, filename: 'broccoli.png')
 deal_5.save
@@ -73,12 +79,12 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195889/d
 deal_6.image.attach(io: file, filename: 'apples.jpg')
 deal_6.save
 
-deal_7 = Deal.create(name: "Grapes", category: "Fruit", price: "1.99", description: "Get a great deal on cotton candy grapes for $1/box in Coles Melbourne this week!", start_date: "2023-05-02", end_date: "2023-05-08", user_id: 4, submission_date: "2023-05-01")
+deal_7 = Deal.create(name: "Grapes", category: "Fruit", price: "1.99", description: "Get a great deal on cotton candy grapes for $1/box in Coles Richmond Traders this week!", start_date: "2023-05-02", end_date: "2023-05-08", user_id: 4, submission_date: "2023-05-01")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195890/deals/grapes_jdsiab.jpg')
 deal_7.image.attach(io: file, filename: 'grapes.jpg')
 deal_7.save
 
-deal_8 = Deal.create(name: "Brown Onions", category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles in Melbourne!", start_date: "2023-05-01", end_date: "2023-05-07", business_id: 1, submission_date: "2023-05-01")
+deal_8 = Deal.create(name: "Brown Onions", category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles Richmond Icon!", start_date: "2023-05-01", end_date: "2023-05-07", business_id: 1, submission_date: "2023-05-01")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195893/deals/brown-onions_mco5nt.jpg')
 deal_8.image.attach(io: file, filename: 'onions.jpg')
 deal_8.save
@@ -136,7 +142,7 @@ description: "This delicious garlic and thyme roast chicken traybake makes enoug
 servings: 2,
 cook_time: 40,
 prep_time: 10,
-ingredients: "2 tbsp extra virgin olive oil, 2 tsp smoked paprika, 2 tsp fresh thyme leaves plus extra small springs to serve, ...Skipped 1 messages",
+ingredients: "2 tbsp extra virgin olive oil, 2 tsp smoked paprika, 2 tsp fresh thyme leaves plus extra small springs to serve, 2 garlic cloves crushed, 2 chicken thigh cutlets with skin and bone, 2 chicken drumsticks, 6 baby potatoes halved, 2 corn cobs halved, 250 g cocktail truss tomatoes cut into small bunches, warm roast chicken gravy with herbs.",
 steps: "1. Preheat the oven to 200°C. 2. Mix together the oil, smoked paprika, thyme leaves, and garlic in a small bowl. 3. Cut the potatoes into small cubes and add them to a roasting tin along with the chicken breasts. Drizzle over the spiced oil and toss everything together until well coated. 4. Roast for 20-25 minutes until the chicken is golden brown and cooked through and the potatoes are tender. 5. Serve with steamed green beans and extra thyme leaves, if you like."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/roast-chicken-traybake_ffyedp.jpg')
@@ -266,7 +272,7 @@ recipe_14 = Recipe.create(
   servings: 2,
   cook_time: 15,
   prep_time: 5,
-  ingredients: "2 potatoes large, 200 g sour cream, 1 spring onion finely chopped, 100 g cheese grated, 1 seasoning",
+  ingredients: "2 potatoes large, 200 g sour cream, 1 spring onion finely chopped, 100 g cheese grated, 1 tsp seasoning of your choice",
   steps: "1. Microwave potatoes for 3 minutes each on high. Cut potatoes in half and scoop out the middle with a spoon, leaving a thin layer inside. Mix the scooped potato, sour cream, spring onion and 50 g of the cheese in a bowl. Spoon the mixture back into the potatoes and sprinkle the rest of the cheese on top. Place under the grill until golden brown."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/stuffed-potatoes_qgwgrt.jpg')

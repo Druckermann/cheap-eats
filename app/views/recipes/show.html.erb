@@ -1,21 +1,33 @@
-<div class="column">
+<div class="d-flex justify-content-center">
   <h1><%= @recipe.name %></h1>
 </div>
-<div class="row">
-  <div class="column d-flex justify-content-center">
-    <div class="card">
-      <%= cl_image_tag @recipe.image.key %>
-      <div class="column">
-        <p><%= @recipe.description %></p>
-      </div>
-      <p>Servings: <%= @recipe.servings %></p>
-      <p>Cook time: <%= @recipe.cook_time%></p>
-      <p>Prep time: <%= @recipe.prep_time%></p>
-      <p>Ingredients:</p>
-      <%= simple_format @recipe.ingredients %>
-      <p>Steps:</p>
-      <%= simple_format @recipe.steps %>
-      <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary" %>
-    </div>
+
+<div class="container">
+  <div class="container" style="text-align: center;">
+    <%= cl_image_tag @recipe.image.key %>
+    <h5><%= @recipe.description %></h5>
   </div>
+  <div class="card-small">
+    <p>Servings: <%= @recipe.servings %></p>
+    <p>Cook time: <%= @recipe.cook_time%> minutes</p>
+    <p>Prep time: <%= @recipe.prep_time%> minutes</p>
+    <p>Ingredients:</p>
+    <ul>
+      <% @recipe.ingredients.split(',').map(&:strip).each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+    <p>Instructions:</p>
+    <ol>
+      <% @recipe.steps.split(/\d+\./).map(&:strip).each do |steps| %>
+        <% unless steps.empty? %>
+          <li><%= steps %></li>
+        <% end %>
+      <% end %>
+    </ol>
+  </div>
+</div>
+
+<div class="container" style="text-align: center;" >
+  <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm" %>
 </div>
