@@ -14,7 +14,7 @@
         <%= deal.description %>
 
         <% if deal.image.attached? %>
-          <%= cl_image_tag deal.image.key, class:"card-image", style: "border-radius: 2%;" "box-shadow: 5px 5px 3px grey; border: 2px solid black;" %>
+          <%= cl_image_tag deal.image.key, class:"card-image", style: "border-radius: 2%;" "box-shadow: 2px 2px 3px grey; border: 2px solid black;" %>
         <% end %>
 
         <%= deal.category %>
