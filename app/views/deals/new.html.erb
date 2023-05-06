@@ -3,14 +3,14 @@
 </div>
 
 <div class="container">
-  <%= simple_form_for(@deal) do |f| %>
+  <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
     <%= f.input :name %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
     <%= f.input :price %>
     <%= f.input :description, placeholder:"Include details such as location, RRP, time you saw the deal" %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+    <%= f.input :image, as: :file %>
     <%= f.button :submit, class:"btn btn-secondary" %>
   <% end %>
 </div>
