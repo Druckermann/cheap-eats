@@ -9,10 +9,10 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database"
-User.destroy_all
 Business.destroy_all
 Deal.destroy_all
 Recipe.destroy_all
+User.destroy_all
 
 puts "Creating database..."
 
