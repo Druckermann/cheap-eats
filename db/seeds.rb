@@ -9,10 +9,10 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database"
-User.destroy_all
 Business.destroy_all
 Deal.destroy_all
 Recipe.destroy_all
+User.destroy_all
 
 puts "Creating database..."
 
@@ -43,7 +43,7 @@ Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibi
 ###########################################################################
 # Deals
 deal_1 = Deal.create(name: "Chicken Drumsticks", category: "Meat", price: "1.99", description: "Found a great deal on chicken drumsticks for $1.99/kg at Woolworths Abbotsford!", start_date: "2023-05-03", end_date: "2023-05-10", user_id: 2, submission_date: "2023-05-03", url: "https://www.woolworths.com.au/shop/productdetails/23208/chicken-legs-drumsticks")
-file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195893/deals/brown-onions_mco5nt.jpg')
+file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/chicken-drumsticks_svmv16.jpg')
 deal_1.image.attach(io: file, filename: 'chicken-drumsticks.jpg')
 puts "Attached image: #{deal_1.image.attached?}"
 deal_1.save
