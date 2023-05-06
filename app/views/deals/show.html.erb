@@ -1,3 +1,12 @@
 <h1 class="text-center"><%= @deal.name %></h1>
 
+<div class="card">
+  <%= @deal.description %>
+
+  <% if @deal.image.attached? %>
+    <%= cl_image_tag @deal.image.key, class:"card-image", style: "border-radius: 2%;" "box-shadow: 5px 5px 3px grey; border: 2px solid black;" %>
+  <% end %>
+  <%= @deal.category %>
+</div>
+
 <%= link_to "Go to deals index", deals_path %>

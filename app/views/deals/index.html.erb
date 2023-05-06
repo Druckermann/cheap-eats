@@ -6,14 +6,18 @@
   <%= link_to "Go to new deal", new_deal_path %>
 </div>
 
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: left;">
   <% @deals.each do |deal| %>
     <div class="row">
       <div class="card">
-        <%= deal.name %>
+        <%= link_to deal.name, deal_path(deal) %>
+        <%= deal.description %>
+
         <% if deal.image.attached? %>
-          <%= cl_image_tag deal.image.key, class:"mx-auto card-image", style: "border-radius: 2%;" "box-shadow: 5px 5px 3px grey; border: 2px solid black;" %>
+          <%= cl_image_tag deal.image.key, class:"card-image", style: "border-radius: 2%;" "box-shadow: 5px 5px 3px grey; border: 2px solid black;" %>
         <% end %>
+
+        <%= deal.category %>
       </div>
     </div>
   <% end %>
