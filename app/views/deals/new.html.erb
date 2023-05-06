@@ -7,7 +7,7 @@
     <%= f.input :name %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
     <%= f.input :price %>
-    <%= f.input :description %>
+    <%= f.input :description placeholder:"Include details such as location, RRP, time you saw the deal" %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.submit %>
