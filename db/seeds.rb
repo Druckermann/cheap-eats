@@ -9,8 +9,8 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database"
-Business.destroy_all
 Deal.destroy_all
+Business.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
@@ -34,9 +34,9 @@ User.create(id: 4, username: "jasper7", password: "123456", email: "jasper7@exam
 
 Business.create(id: 1, name: "Woolworths Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
 
-Business.create(id: 2, name: "Coles Richmond Traders", street: "Cnr Church St and Bridge Rd", suburb: "Richmond", state: "VIC", postcode: 3121)
+Business.create(id: 2, name: "Coles Richmond Traders", street: "230 Church St", suburb: "Richmond", state: "VIC", postcode: 3121)
 
-Business.create(id: 3, name: "Coles Richmond Icon", street: "150/160 Swan St", suburb: "Richmond", state: "VIC", postcode: 3121)
+Business.create(id: 3, name: "Coles Richmond Icon", street: "150 Swan St", suburb: "Richmond", state: "VIC", postcode: 3121)
 
 Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibition St", suburb: "South Melbourne", state: "VIC", postcode: 3000)
 
@@ -44,7 +44,7 @@ Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", su
 
 Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008)
 
-Business.create(id: 7, name: "Aldi Abbotsford, ", street: "313/325 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
+Business.create(id: 7, name: "Aldi Abbotsford, ", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
 
 ###########################################################################
 # Deals
