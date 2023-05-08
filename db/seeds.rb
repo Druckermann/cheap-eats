@@ -44,7 +44,7 @@ Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", su
 
 Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008)
 
-Business.create(id: 7, name: "Aldi Abbotsford, ", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
+Business.create(id: 7, name: "Aldi Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
 
 ###########################################################################
 # Deals
