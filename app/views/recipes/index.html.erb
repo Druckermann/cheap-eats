@@ -3,13 +3,18 @@
 </div>
 
 <div class="container" style="text-align: center;">
+  <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary" %>
+  <%= link_to "Favourites", favourites_path, class: "btn btn-secondary" %>
   <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>
-    <%= submit_tag "Search", name: nil, class: "btn btn-secondary"%>
+    <div class="button-row">
+      <%= submit_tag "Search", name: nil, class: "btn btn-secondary"%>
+    </div>
   <% end %>
 
+
   <% @recipes.each do |recipe| %>
-    <div class="recipe-card">
+    <div class="card">
       <h2><%= recipe.name %></h2>
       <h4><%= recipe.description %></h4>
       <%# AT: image text Fri 05/05 %>
@@ -17,11 +22,12 @@
           <%= cl_image_tag recipe.image.key %>
         <% end %>
         <%# ############# %>
+        <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary" %>
     </div>
-    <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary" %>
   <% end %>
 </div>
 
-
-<%= link_to "Back to choice", choice_path %>
-<%= link_to "Go to home", root_path %>
+<div class="container" style="text-align: center;">
+  <%= link_to "Back to choice", choice_path, class: "btn btn-secondary" %>
+  <%= link_to "Go to home", root_path, class: "btn btn-secondary" %>
+</div>

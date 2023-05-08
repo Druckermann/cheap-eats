@@ -2,8 +2,8 @@
   <h1><%= @recipe.name %></h1>
 </div>
 
-<div class="container">
-  <div class="container" style="text-align: center;">
+<div class="card">
+  <div class="card" style="text-align: center;">
     <%= cl_image_tag @recipe.image.key %>
     <h5><%= @recipe.description %></h5>
   </div>
@@ -29,5 +29,10 @@
 </div>
 
 <div class="container" style="text-align: center;" >
+  <% if @recipe.favourite? %>
+    <%= link_to "Remove from favourites", recipe_path(@recipe, recipe: { favourite: false }), method: :put, class: "btn btn-secondary btn-sm" %>
+  <% else %>
+    <%= link_to "Add to favourites", recipe_path(@recipe, recipe: { favourite: true }), method: :put, class: "btn btn-secondary btn-sm" %>
+  <% end %>
   <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm" %>
 </div>

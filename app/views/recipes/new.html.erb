@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center">
+  <h1>Upload a recipe</h1>
+</div>
+
+<div class="container">
+  <%= simple_form_for @recipe do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :description %>
+    <%= f.input :cook_time, placeholder:"in minutes" %>
+    <%= f.input :prep_time, placeholder:"in minutes" %>
+    <%= f.input :servings %>
+    <%= f.input :ingredients, placeholder:"Please separate each ingredients by a comma (,)" %>
+    <%= f.input :steps, placeholder: "Please separate each step in the instructions by using a number followed by a period (.)"%>
+    <div style="text-align: center;">
+      <%= f.button :submit, class:"btn btn-secondary" %> <%= link_to "Go to recipes", recipes_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>
