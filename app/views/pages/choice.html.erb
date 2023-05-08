@@ -18,7 +18,16 @@
 
 <p>Just after map</p>
 
-
+<h2>Businesses near Melbourne</h2>
+Melbourne: <% "#{@melbourne_location.latitude}"%>
+<ul>
+<% @targeted_businesses.each do |business| %>
+  <% if business.latitude && business.longitude %>
+    <li><%= business.name %></li>
+    <%# <li><%= business.distance_to(@melbourne_location, units: :km) km away</li> %> %>
+  <% end %>
+<% end %>
+</ul>
 
 
 
