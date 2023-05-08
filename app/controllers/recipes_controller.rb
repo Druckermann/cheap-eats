@@ -8,6 +8,44 @@ class RecipesController < ApplicationController
   end
 
   def show
+    begin
+      @recipe = Recipe.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to recipes_path, flash: { error: "Recipe not found." }
+    end
+  end
+
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to @recipe
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
     @recipe = Recipe.find(params[:id])
+    @recipe.favourite = !@recipe.favourite
+    @recipe.save
+    redirect_to @recipe
+  end
+
+  def favourites
+   @recipes = Recipe.where(favourite: true)
+  end
+
+  private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :image, :description, :cook_time, :prep_time, :servings, :ingredients, :steps)
   end
 end
