@@ -1,33 +1,42 @@
 <div class="container">
   <h2>Find a deal near you</h2>
   <%= form_tag(deals_path, method: :get) do %>
-    <%= label_tag(:postcode, "Enter your postcode:") %>
+    <%= label_tag(:postcode, "Enter your address:") %>
     <%= text_field_tag(:postcode) %>
     <%= submit_tag("Search") %>
   <% end %>
 </div>
 <br>
 
-<p>Just before map</p>
-
-<div style="width: 100%; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-<p>Just after map</p>
-
+<div>
 <h2>Businesses near Melbourne</h2>
-Melbourne: <% "#{@melbourne_location.latitude}"%>
+Melbourne: <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
 <ul>
 <% @targeted_businesses.each do |business| %>
+  <% puts business.latitude, business.longitude %>
   <% if business.latitude && business.longitude %>
-    <li><%= business.name %></li>
-    <%# <li><%= business.distance_to(@melbourne_location, units: :km) km away</li> %> %>
+    <li><%= "#{business.name}, #{business.distance_to(@melbourne_location)}" %> km away</li>
   <% end %>
 <% end %>
 </ul>
+</div>
+
+
+
+<p>Just before map</p>
+
+<div id="map">
+  <div style="width: 100%; height: 300px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+<div id="geocoder" class="geocoder" data-controller="map" data-map-target=“geocoder”></div>
+
+
+<p>Just after map</p>
+
 
 
 

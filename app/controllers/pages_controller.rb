@@ -19,8 +19,8 @@ class PagesController < ApplicationController
   end
 
   def business_list
-    @melbourne_location = Geocoder.search('Melbourne, VIC, Australia').first
-    @targeted_businesses = Business.near([@melbourne_location.latitude, @melbourne_location.longitude], 20, units: :km)
+    @melbourne_location = Geocoder.search('Melbourne, VIC, AU').first
+    @targeted_businesses = Business.near([@melbourne_location.latitude, @melbourne_location.longitude], 3, units: :km)
     puts "Melbourne location: lat=#{@melbourne_location.latitude}, lng=#{@melbourne_location.longitude}"
   end
 

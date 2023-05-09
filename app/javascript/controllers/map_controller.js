@@ -3,6 +3,7 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 // Connects to data-controller="map"
 export default class extends Controller {
+  static targets = ["geocoder"]
   static values = {
     apiKey: String,
     markers: Array
@@ -19,7 +20,11 @@ export default class extends Controller {
     this.#fitMapToMarkers()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }))
-
+      const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        });
+      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
   }
 
   #fitMapToMarkers() {
