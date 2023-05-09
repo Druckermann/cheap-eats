@@ -1,5 +1,32 @@
-.card-image {
-  width: 80px;
+.card-deal-image {
+  width: 100px;
   height: 100%;
   object-fit:cover;
+  border-radius: 2%;
+  box-shadow: 2px 2px 3px grey;
+  border: 2px solid black;
 }
+
+.category-tag {
+
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0px 4px;
+  }
+
+  .card-recipe-image {
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 2%;
+    box-shadow: 2px 2px 3px grey;
+    border: 2px solid black;
+  }
+
+  .recipe-description, .recipe-title {
+    margin: 8px;
+  }

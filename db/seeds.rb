@@ -9,8 +9,8 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database"
-Deal.destroy_all
 Business.destroy_all
+Deal.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
@@ -32,19 +32,19 @@ User.create(id: 4, username: "jasper7", password: "123456", email: "jasper7@exam
 # Businesses
 # id, name, street, suburb, state, postcode
 
-Business.create(id: 1, name: "Woolworths Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067, latitude: -37.8098881, longitude: 144.9954892)
+Business.create(id: 1, name: "Woolworths Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
 
-Business.create(id: 2, name: "Coles Richmond Traders", street: "230 Church St", suburb: "Richmond", state: "VIC", postcode: 3121, latitude: -37.817740, longitude: 144.9966216)
+Business.create(id: 2, name: "Coles Richmond Traders", street: "Cnr Church St and Bridge Rd", suburb: "Richmond", state: "VIC", postcode: 3121)
 
-Business.create(id: 3, name: "Coles Richmond Icon", street: "150 Swan St", suburb: "Richmond", state: "VIC", postcode: 3121, latitude: -37.8254909, longitude: 144.9947938)
+Business.create(id: 3, name: "Coles Richmond Icon", street: "150/160 Swan St", suburb: "Richmond", state: "VIC", postcode: 3121)
 
-Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibition St", suburb: "Melbourne", state: "VIC", postcode: 3000, latitude: -37.807831, longitude: 144.968338)
+Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibition St", suburb: "South Melbourne", state: "VIC", postcode: 3000)
 
-Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", suburb: "Melbourne", state: "VIC", postcode: 3000, latitude: -37.8130167, longitude: 144.9598849)
+Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", suburb: "Melbourne", state: "VIC", postcode: 3000)
 
-Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008, latitude: -37.8104378, longitude: 144.938307)
+Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008)
 
-Business.create(id: 7, name: "Aldi Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067, latitude: -37.8098881, longitude: 144.9954892)
+Business.create(id: 7, name: "Aldi Abbotsford, ", street: "313/325 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067)
 
 ###########################################################################
 # Deals
@@ -135,6 +135,9 @@ steps: "1. Preheat oven to 200 C or 180 C fan-forced. 2. Season drumsticks. Heat
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/baked-chicken-drumsticks_lop02e.jpg')
 recipe_3.image.attach(io: file, filename: 'baked-drumsticks.jpg')
 recipe_3.save
+
+deal_1.recipes = [recipe_1, recipe_2, recipe_3]
+puts "deal_1 recipes associated"
 
 recipe_4 = Recipe.create(
 name: "Roast Chicken Traybake Dinner For Two",
@@ -240,6 +243,10 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/r
 recipe_11.image.attach(io: file, filename: 'beef-rissoles.jpg')
 recipe_11.save
 
+deal_3.recipes = [recipe_7, recipe_8, recipe_9, recipe_10, recipe_11]
+
+puts " deal_3 recipes associated"
+
 recipe_12 = Recipe.create(
   name: "Beef and Gravy Casserole",
   description: "Winter comfort food that is tasty and easy to make. Even the kids will eat it.",
@@ -252,6 +259,8 @@ recipe_12 = Recipe.create(
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/beef-and-gravy_casserole_naj8ot.jpg')
 recipe_12.image.attach(io: file, filename: 'beef-casserole.jpg')
 recipe_12.save
+
+deal_9.recipes = [recipe_12]
 
 recipe_13 = Recipe.create(
   name: "Roast Potatoes",
@@ -331,5 +340,9 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/r
 recipe_18.image.attach(io: file, filename: 'potato-salad.jpg')
 recipe_18.save
 
+deal_2.recipes = [recipe_4, recipe_13, recipe_14, recipe_15, recipe_16, recipe_17, recipe_18]
+deal_8.recipes = [recipe_7, recipe_10, recipe_11, recipe_12, recipe_16]
+
+puts "deal_2 and deal_8 recipes associated"
 ###########################################################################
 puts "Finished!"
