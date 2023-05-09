@@ -1,0 +1,16 @@
+<div class="container" style="text-align: center;">
+  <h1>Favorite Recipes</h1>
+</div>
+
+<div class="container" style="text-align: justify">
+  <% if @recipes.any? %>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= link_to recipe.name, recipe_path(recipe) %>
+      <li>
+      <%= render 'favorite_btn', recipe: recipe %>
+    <% end %>
+<% else %>
+  <p>You haven't added any recipes to your favourites yet.</p>
+<% end %>
+</div>

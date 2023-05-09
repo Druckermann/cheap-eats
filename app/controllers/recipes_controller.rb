@@ -30,13 +30,12 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.favourite = !@recipe.favourite
     @recipe.save
     redirect_to @recipe
   end
 
-  def favourites
-   @recipes = Recipe.where(favourite: true)
+  def favorites
+    @recipes = current_user.favorites.map{ |favorite| favorite.favoritable }
   end
 
   private

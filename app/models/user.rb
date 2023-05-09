@@ -1,10 +1,11 @@
 class User < ApplicationRecord
+  acts_as_favoritor
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :deals
-  has_many :favourites, through: :recipes
-  validates :username, :password, :email, presence: true
-
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
+
+  has_many :deals
+  validates :username, :password, :email, presence: true
 end

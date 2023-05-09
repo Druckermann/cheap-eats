@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   # AT: added to try out geocoding 08/05
   before_action :business_list, only: [:choice]
 
-
   def home
   end
 
@@ -23,5 +22,4 @@ class PagesController < ApplicationController
     @targeted_businesses = Business.near([@melbourne_location.latitude, @melbourne_location.longitude], 20, units: :km)
     puts "Melbourne location: lat=#{@melbourne_location.latitude}, lng=#{@melbourne_location.longitude}"
   end
-
 end
