@@ -28,7 +28,8 @@
   </div>
 </div>
 
+
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-  <%= render 'favorites/favorite_btn', recipe: @recipe %>
-  <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm" %>
+  <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm", style: "margin-right: 10px;" %>
+   <%= render 'favorites/favorite_btn', recipe: @recipe %>
 </div>
