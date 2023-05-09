@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Deals index</h1>
+  <h1>Deals</h1>
 </div>
 
 <div>
@@ -8,16 +8,16 @@
 
 <div class="container" style="text-align: left;">
   <% @deals.each do |deal| %>
-    <div class="row">
+    <div class="row my-2 mx-2">
       <div class="card">
         <%= link_to deal.name, deal_path(deal) %>
         <%= deal.description %>
-
         <% if deal.image.attached? %>
-          <%= cl_image_tag deal.image.key, class:"card-image", style: "border-radius: 2%;" "box-shadow: 2px 2px 3px grey; border: 2px solid black;" %>
+          <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
         <% end %>
-
-        <%= deal.category %>
+        <ul class="category-tag">
+          <li><i class="fa fa-tag"></i> <%= deal.category %></li>
+        </ul>
       </div>
     </div>
   <% end %>
