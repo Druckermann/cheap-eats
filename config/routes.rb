@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/choice", to: "pages#choice"
   resources :favorites, only: :index
-  resources :recipes, only: [:index, :show, :new, :create, :update]
+  resources :recipes, only: [:index, :show, :new, :create, :update] do
+    member do
+      post :toggle_favorite, controller: 'favorites'
+    end
+  end
   resources :deals, only: [:index, :show, :new, :create]
 end

@@ -28,11 +28,7 @@
   </div>
 </div>
 
-<div class="container" style="text-align: center;" >
-  <% if @recipe.favourite? %>
-    <%= link_to "Remove from favourites", recipe_path(@recipe, recipe: { favourite: false }), method: :put, class: "btn btn-secondary btn-sm" %>
-  <% else %>
-    <%= link_to "Add to favourites", recipe_path(@recipe, recipe: { favourite: true }), method: :put, class: "btn btn-secondary btn-sm" %>
-  <% end %>
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <%= render 'favorites/favorite_btn', recipe: @recipe %>
   <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm" %>
 </div>

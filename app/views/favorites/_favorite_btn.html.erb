@@ -1,0 +1,5 @@
+<% if current_user.favorited?(recipe) %>
+  <%= link_to 'Unfavorite', toggle_favorite_recipe_path(recipe), class: "btn btn-secondary", data: { turbo_method: :post } %>
+<% else %>
+  <%= link_to 'Favorite', toggle_favorite_recipe_path(recipe), class: "btn btn-secondary", data: { turbo_method: :post } %>
+<% end %>

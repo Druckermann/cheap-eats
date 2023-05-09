@@ -1,16 +1,16 @@
-<h1>Favourite Recipes</h1>
+<div class="container" style="text-align: center;">
+  <h1>Favorite Recipes</h1>
+</div>
 
-<% if @recipes.any? %>
-  <ul>
+<div class="container" style="text-align: justify">
+  <% if @recipes.any? %>
     <% @recipes.each do |recipe| %>
       <li>
         <%= link_to recipe.name, recipe_path(recipe) %>
-        <%= form_with url: favourite_path(recipe), method: :delete, local: true do |f| %>
-          <%= f.submit "Remove from Favourites" %>
-        <% end %>
-      </li>
+      <li>
+      <%= render 'favorite_btn', recipe: recipe %>
     <% end %>
-  </ul>
 <% else %>
   <p>You haven't added any recipes to your favourites yet.</p>
 <% end %>
+</div>

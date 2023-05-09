@@ -34,6 +34,10 @@ class RecipesController < ApplicationController
     redirect_to @recipe
   end
 
+  def favorites
+    @recipes = current_user.favorites.map{ |favorite| favorite.favoritable }
+  end
+
   private
 
   def set_recipe
