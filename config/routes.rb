@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "/choice", to: "pages#choice"
-  get 'favourites', to: 'recipes#favourites'
+  resources :favorites, only: :index
   resources :recipes, only: [:index, :show, :new, :create, :update]
   resources :deals, only: [:index, :show, :new, :create]
 end
