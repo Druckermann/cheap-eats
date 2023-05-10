@@ -246,7 +246,7 @@ recipe_11.save
 
 deal_3.recipes = [recipe_7, recipe_8, recipe_9, recipe_10, recipe_11]
 
-puts " deal_3 recipes associated"
+puts "deal_3 recipes associated"
 
 recipe_12 = Recipe.create(
   name: "Beef and Gravy Casserole",
