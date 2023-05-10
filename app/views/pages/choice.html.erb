@@ -4,12 +4,12 @@
 <br>
 
 <div>
-Melbourne: <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
+Deals within 5 km of Melbourne: <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
 <ul>
 <% @targeted_businesses.each do |business| %>
   <% puts business.latitude, business.longitude %>
   <% if business.latitude && business.longitude %>
-    <li><%= "#{business.name}, #{business.distance_to(@melbourne_location)}" %> km away</li>
+    <li><%= "#{business.name} is about #{number_with_precision(business.distance_to([@melbourne_location.latitude, @melbourne_location.longitude]), precision: 1)}" %> km away.</li>
   <% end %>
 <% end %>
 </ul>

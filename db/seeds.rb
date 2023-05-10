@@ -33,20 +33,21 @@ User.create(id: 4, username: "jasper7", password: "123456", email: "jasper7@exam
 # id, name, street, suburb, state, postcode
 
 
-Business.create(id: 1, name: "Woolworths Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067, latitude: -37.8098881, longitude: 144.9954892)
+Business.create(id: 1, name: "Woolworths South Yarra", street: "670 Chapel St", suburb: "South Yarra", state: "VIC", postcode: 3141, latitude: -37.837231, longitude: 144.996277)
 
-Business.create(id: 2, name: "Coles Richmond Traders", street: "230 Church St", suburb: "Richmond", state: "VIC", postcode: 3121, latitude: -37.817740, longitude: 144.9966216)
+Business.create(id: 2, name: "Coles Richmond Traders", street: "240 Church St", suburb: "Richmond", state: "VIC", postcode: 3121, latitude: -37.817740, longitude: 144.9966216)
 
 Business.create(id: 3, name: "Coles Richmond Icon", street: "150 Swan St", suburb: "Richmond", state: "VIC", postcode: 3121, latitude: -37.8254909, longitude: 144.9947938)
 
 Business.create(id: 4, name: "IGA XPress Exhibition Street", street: "333 Exhibition St", suburb: "Melbourne", state: "VIC", postcode: 3000, latitude: -37.807831, longitude: 144.968338)
 
-Business.create(id: 5, name: "Queen Victoria Market", street: "465 Queen St", suburb: "Melbourne", state: "VIC", postcode: 3000, latitude: -37.8130167, longitude: 144.9598849)
+Business.create(id: 5, name: "Queen Victoria Market", street: "432 Queen St", suburb: "Melbourne", state: "VIC", postcode: 3000, latitude: -37.8130167, longitude: 144.9598849)
 
 Business.create(id: 6, name: "Costco Docklands", street: "381 Footscray Rd", suburb: "Docklands", state: "VIC", postcode: 3008, latitude: -37.8104378, longitude: 144.938307)
 
 Business.create(id: 7, name: "Aldi Abbotsford", street: "313 Victoria St", suburb: "Abbotsford", state: "VIC", postcode: 3067, latitude: -37.8098881, longitude: 144.9954892)
 
+###########################################################################
 # Deals
 deal_1 = Deal.create(name: "Chicken Drumsticks", category: "Meat", price: "1.99", description: "Found a great deal on chicken drumsticks for $1.99/kg at Woolworths Abbotsford!", start_date: "2023-05-03", end_date: "2023-05-10", user_id: 2, submission_date: "2023-05-03", url: "https://www.woolworths.com.au/shop/productdetails/23208/chicken-legs-drumsticks")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/chicken-drumsticks_svmv16.jpg')
