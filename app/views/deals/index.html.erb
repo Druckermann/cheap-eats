@@ -2,8 +2,8 @@
   <h1>Deals</h1>
 </div>
 
-<div>
-  <%= link_to "Go to new deal", new_deal_path %>
+<div class="text-center">
+  <%= link_to "Submit a new deal", new_deal_path, class:"btn btn-secondary" %>
 </div>
 
 <div class="container" style="text-align: left;">
@@ -11,12 +11,19 @@
     <div class="row my-2 mx-2">
       <div class="card">
         <%= link_to deal.name, deal_path(deal) %>
-        <%= deal.description %>
-        <% if deal.image.attached? %>
-          <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
-        <% end %>
+        <div class="d-flex p-0.5 ">
+          <%= deal.description %>
+          <% if deal.image.attached? %>
+            <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
+          <% end %>
+        </div>
         <ul class="category-tag">
-          <li><i class="fa fa-tag"></i> <%= deal.category %></li>
+          <% if deal.user && deal.user.username.present? %>
+            <li> Submitted by: <%= deal.user.username %></li>
+          <% elsif deal.business.name.present? %>
+            <li> Submitted by: <%= deal.business.name %></li>
+          <% end %>
+            <li><i class="fa fa-tag"></i> <%= deal.category %></li>
         </ul>
       </div>
     </div>

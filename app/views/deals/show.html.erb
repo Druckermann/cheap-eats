@@ -1,21 +1,30 @@
-<h1 class="text-center"><%= @deal.name %></h1>
 
 <div class="container">
   <div class="card">
-    <%= @deal.description %>
-    <% if @deal.image.attached? %>
-      <%= cl_image_tag @deal.image.key, class:"card-deal-image" %>
-    <% end %>
+    <h1 class="text-center"><%= @deal.name %></h1>
+    <div class="d-flex p-1 ">
+      <%= @deal.description %>
+      <% if @deal.image.attached? %>
+        <%= cl_image_tag @deal.image.key, class:"card-deal-image" %>
+      <% end %>
+    </div>
+    <p>Starts on: <%= @deal.start_date.strftime('%d-%m-%Y') %></p>
+    <p>Ends on: <%= @deal.end_date.strftime('%d-%m-%Y') %></p>
     <ul class="category-tag">
-      <li> Submitted by: <%= @deal.user.username %></li>
+      <% if @deal.user && @deal.user.username.present? %>
+        <li> Submitted by: <%= @deal.user.username %></li>
+      <% elsif @deal.business.name.present? %>
+        <li> Submitted by: <%= @deal.business.name %></li>
+      <% end %>
       <li><i class="fa fa-tag"></i> <%= @deal.category %></li>
     </ul>
   </div>
 </div>
 
-<%= link_to "Go to deals index", deals_path %>
+<br>
 
-<h2 class=text-center>See some recipes</h2>
+<h2 class="text-center m-2" >Recommended recipes</h2>
+
 <div class="container">
   <% @deal.recipes.each do |recipe| %>
     <div class="card my-2 mx-2">
