@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def choice
+    place_name = "..."
+    @place_name = place_name
     @businesses = Business.all
     @markers = @businesses.geocoded.map do |business|
       {
