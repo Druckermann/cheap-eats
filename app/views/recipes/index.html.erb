@@ -3,8 +3,8 @@
 </div>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-  <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary" %>
-  <%= link_to "Favorite recipes", favorites_path, class: "btn btn-secondary" %>
+  <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
+  <%= link_to "Favorite recipes", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
 </div>
 
 <div class="container" style="text-align: center;">
@@ -27,13 +27,13 @@
         <%# ############# %>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary" %>
+      <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary", style: "margin-right: 10px;" %>
       <%= render 'favorites/favorite_btn', recipe: recipe %>
     </div>
   <% end %>
 </div>
 
-<div class="container" style="text-align: center;">
+<%#<div class="container" style="text-align: center;">
   <%= link_to "Back to choice", choice_path, class: "btn btn-secondary" %>
-  <%= link_to "Go to home", root_path, class: "btn btn-secondary" %>
-</div>
+  <%#<%= link_to "Go to home", root_path, class: "btn btn-secondary" %>
+<%#</div>
