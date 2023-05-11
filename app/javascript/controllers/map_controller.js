@@ -23,6 +23,21 @@ export default class extends Controller {
       });
     document.getElementById('geocoder').appendChild(geocoder.onAdd(this.map));
 
+    // AT: Idea 2 for capturing search result 11/05
+    geocoder.on('result', function(e) {
+      // Get the new place name from the search result
+      const newPlaceName = e.result.place_name;
+      // Update the HTML on the page with the new place name
+      document.querySelector('#place_name').textContent = newPlaceName;
+    });
+
+    // AT: Idea 1 for capturing search result 11/05
+    // geocoder.on('result', function(e) {
+    //   document.getElementById('place_name').value = e.result.place_name
+    //    console.log(e.result)
+
+    // })
+
   }
 
   #fitMapToMarkers() {
