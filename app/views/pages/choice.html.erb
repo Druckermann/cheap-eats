@@ -6,9 +6,9 @@
 <br>
 
 
-<div>
-<p>Deals within 5 km of <span id="place_name"><%= @place_name %></span>
-<%# <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
+<div class="container">
+  <p>Deals within 5 km of <span id="place_name"><%= @place_name %></span>
+  <%# <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
   <ul>
   <% @targeted_businesses.each do |business| %>
     <% puts business.latitude, business.longitude %>

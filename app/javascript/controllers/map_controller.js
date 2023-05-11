@@ -29,12 +29,17 @@ export default class extends Controller {
       const newPlaceName = e.result.place_name;
       // Update the HTML on the page with the new place name
       document.querySelector('#place_name').textContent = newPlaceName;
+      // AT: trying to access lat and long of new place
+      // const newLatitude = e.result.center[0];
+      // document.querySelector('#lat').textContent = ) /////////fix up/////
+
+      console.log(e.result)
     });
 
     // AT: Idea 1 for capturing search result 11/05
     // geocoder.on('result', function(e) {
     //   document.getElementById('place_name').value = e.result.place_name
-    //    console.log(e.result)
+      //  console.log(e.result)
 
     // })
 
