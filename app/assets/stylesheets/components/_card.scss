@@ -12,7 +12,7 @@
   display: flex;
   list-style-type: none;
   justify-content: space-between;
-  margin-bottom: 0;
+  margin: 8px 0px;
   padding: 0px 4px;
   }
 
@@ -29,4 +29,9 @@
 
   .recipe-description, .recipe-title {
     margin: 8px;
+  }
+
+  .deal-date {
+    margin-bottom: 0;
+    padding: 4px;
   }
