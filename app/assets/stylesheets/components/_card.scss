@@ -6,6 +6,13 @@
   box-shadow: 2px 2px 3px grey;
   border: 2px solid black;
 }
+.card-show {
+  padding: 12px;
+}
+
+.card-show > .category-tag {
+  padding: 4px;
+}
 
 .category-tag {
 
@@ -13,7 +20,8 @@
   list-style-type: none;
   justify-content: space-between;
   margin: 8px 0px;
-  padding: 0px 4px;
+  padding: 4px;
+  font-size: 0.750em;
   }
 
   .card-recipe-image {

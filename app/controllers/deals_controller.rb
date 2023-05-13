@@ -15,6 +15,9 @@ class DealsController < ApplicationController
 
   def create
     @deal = Deal.new(deal_params)
+    @deal.user = current_user
+    business = Business.find_by(name: params[:business_name])
+    @deal.business_id = business.id if business
     if @deal.save
       redirect_to @deal
     else
