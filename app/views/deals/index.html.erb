@@ -9,15 +9,18 @@
 <div class="container" style="text-align: left;">
   <% @deals.each do |deal| %>
     <div class="row my-2 mx-2">
+      <%= link_to deal do %>
       <div class="card">
-        <%= link_to deal.name, deal_path(deal) %>
+        <h4><%= deal.name %></h4>
         <div class="d-flex p-0.5 ">
           <%= deal.description %>
-          <% if deal.image.attached? %>
-            <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
-          <% end %>
+
+            <% if deal.image.attached? %>
+              <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
+            <% end %>
+
         </div>
-        <ul class="category-tag">
+        <ul class="category-tag p-0">
           <% if deal.user && deal.user.username.present? %>
             <li> Submitted by: <%= deal.user.username %></li>
            <% elsif deal.business.present? && deal.business.name.present? %>
@@ -26,6 +29,7 @@
             <li><i class="fa fa-tag"></i> <%= deal.category %></li>
         </ul>
       </div>
+      <% end %>
     </div>
   <% end %>
 </div>
