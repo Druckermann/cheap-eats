@@ -1,5 +1,8 @@
 <% if current_user.favorited?(recipe) %>
-  <%= link_to 'Unfavorite', toggle_favorite_recipe_path(recipe), class: "btn btn-secondary", data: { turbo_method: :post } %>
+  <%= link_to '', toggle_favorite_recipe_path(recipe), class: "fa-solid fa-heart heart-icon", data: { turbo_method: :post } %>
 <% else %>
-  <%= link_to 'Favorite', toggle_favorite_recipe_path(recipe), class: "btn btn-secondary", data: { turbo_method: :post } %>
+  <%= link_to '', toggle_favorite_recipe_path(recipe), class: "fa-regular fa-heart heart-icon", data: { turbo_method: :post } %>
 <% end %>
+
+ <!-- <i class="fa-solid fa-heart"></i> -->
+ <!-- <i class="fa-regular fa-heart"></i> -->

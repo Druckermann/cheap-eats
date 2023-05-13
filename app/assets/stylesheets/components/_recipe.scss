@@ -1,0 +1,40 @@
+.heart-icon {
+  text-decoration: none;
+  color: grayscale($color: #353232);
+  // position: absolute;
+  font-size: 24px;
+  // font-weight: bold;
+}
+
+.card-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.card-recipe h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.card-recipe img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card-small {
+  padding: 10px;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 10px;
+}
