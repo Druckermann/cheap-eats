@@ -1,17 +1,24 @@
 .card-deal-image {
-  width: 100px;
-  height: 100%;
-  object-fit:cover;
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
   border-radius: 2%;
-  box-shadow: 2px 2px 3px grey;
-  border: 2px solid black;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
-.card-show {
+.card {
   padding: 12px;
+  border-radius: 2%;
 }
 
 .card-show > .category-tag {
   padding: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .category-tag {
@@ -19,8 +26,8 @@
   display: flex;
   list-style-type: none;
   justify-content: space-between;
-  margin: 8px 0px;
-  padding: 4px;
+  margin-top: 8px;
+  margin-bottom: 0;
   font-size: 0.750em;
   }
 
@@ -31,7 +38,7 @@
     height: 100%;
     object-fit:cover;
     border-radius: 2%;
-    box-shadow: 2px 2px 3px grey;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border: 2px solid black;
   }
 
