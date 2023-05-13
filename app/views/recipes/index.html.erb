@@ -1,13 +1,13 @@
-<div class="d-flex justify-content-center">
+<div class="container">
   <h1>Recipes</h1>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div class="container">
   <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
-  <%= link_to "Favorite recipes", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
+  <%= link_to "Favorites", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
 </div>
 
-<div class="container" style="text-align: center;">
+<div class="container">
   <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>
     <div class="button-row">
@@ -17,23 +17,15 @@
 
 
   <% @recipes.each do |recipe| %>
-    <div class="card">
-      <h2><%= recipe.name %></h2>
-      <h4><%= recipe.description %></h4>
-      <%# AT: image text Fri 05/05 %>
-        <% if recipe.image.attached? %>
-          <%= cl_image_tag recipe.image.key %>
-        <% end %>
-        <%# ############# %>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-secondary", style: "margin-right: 10px;" %>
-      <%= render 'favorites/favorite_btn', recipe: recipe %>
-    </div>
+    <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
+     <div class="card-recipe" >
+        <h2><%= recipe.name %></h2>
+       <!--<h4><%= recipe.description %></h4> -->
+         <% if recipe.image.attached? %>
+           <%= cl_image_tag recipe.image.key %>
+         <% end %>
+         <%= render 'favorites/favorite_btn', recipe: recipe %>
+      </div>
+    </a>
   <% end %>
 </div>
-
-<%#<div class="container" style="text-align: center;">
-  <%= link_to "Back to choice", choice_path, class: "btn btn-secondary" %>
-  <%#<%= link_to "Go to home", root_path, class: "btn btn-secondary" %>
-<%#</div>
