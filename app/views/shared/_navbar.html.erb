@@ -2,25 +2,54 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col text-center">
-        <%= link_to "Home", root_path, class: "nav-link" %>
+        <%= link_to root_path, class: "nav-link" do %>
+          <i class="fa-solid fa-house"></i>
+          <br>
+          Home
+        <% end %>
       </div>
       <div class="col text-center">
-        <%= link_to "Deals", deals_path, class: "nav-link" %>
+       <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= raw('<i class="fa-solid fa-dollar-sign"></i>') %>
+            <br>
+            Deals
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
+            <%= link_to raw('<i class="fa-solid fa-magnifying-glass"></i> Find a Deal'), deals_path, class: "dropdown-item" %>
+            <%= link_to raw('<i class="fa-solid fa-circle-plus"></i> Add a Deal'), new_deal_path, class: "dropdown-item" %>
+          </ul>
+        </div>
       </div>
       <div class="col text-center">
-        <%= link_to "Recipes", recipes_path, class: "nav-link" %>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= raw('<i class="fa-solid fa-utensils"></i>') %>
+            <br>
+            Recipes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
+            <%= link_to raw('<i class="fa-solid fa-magnifying-glass"></i> Find a Recipe'), recipes_path, class: "dropdown-item" %>
+            <%= link_to raw('<i class="fa-solid fa-circle-plus"></i> Add a Recipe'), new_recipe_path, class: "dropdown-item" %>
+            <%= link_to raw('<i class="fa-solid fa-heart-circle-check"></i> See Your Saved Recipes'), favorites_path, class: "dropdown-item" %>
+          </ul>
+        </div>
       </div>
-      <div class="col text-center">
-        <%= link_to "Profile", "#", class: "nav-link" %>
+     <div class="col text-center">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-user"></i>
+          <br>
+          Profile
+        </a>
       </div>
-      <div class="col text-center">
+      <!-- <div class="col text-center">
         <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= image_tag "https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683797288/Cheap%20Eats%20misc/bored_wmziqf.png", class: "avatar", alt: "dropdown menu" %>
         </a>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
