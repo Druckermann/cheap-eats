@@ -1,13 +1,16 @@
-
-<div class="container">
+  <div class="container">
   <div class="card">
     <div class="card-show">
       <h1 class="text-center"><%= @deal.name %></h1>
-      <div class="d-flex p-1 ">
-        <%= @deal.description %>
-        <% if @deal.image.attached? %>
-          <%= cl_image_tag @deal.image.key, class:"card-deal-image" %>
-        <% end %>
+      <div class="card-deal-description">
+        <div class="card-deal-description-text">
+          <%= @deal.description %>
+        </div>
+        <div class="card-deal-image">
+          <% if @deal.image.attached? %>
+            <%= cl_image_tag @deal.image.key, class:"card-deal-image"%>
+          <% end %>
+        </div>
       </div>
       <% if @deal.start_date && @deal.end_date.present? %>
         <p class="deal-date">Starts on: <%= @deal.start_date.strftime('%d-%m-%Y') %></p>
