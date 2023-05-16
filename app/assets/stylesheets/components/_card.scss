@@ -3,10 +3,6 @@
   border-radius: 2%;
 }
 
-.card-show > .category-tag {
-  padding: 4px;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -14,51 +10,60 @@ a {
 
 .card-deal-description {
   display: flex;
+  align-content: space-between;
 }
 
 .card-deal-description-text {
   text-align: left;
-  width: 200px;
+  width: 225px;
   height: 100px;
   font-size: 0.875em;
 }
 
-.card-deal-image {
-  display: block;
+.card-deal-image > img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 2%;
-  /* border: 1px solid black; */
+  border: 0.5px solid black;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .category-tag {
-
   display: flex;
   list-style-type: none;
   justify-content: space-between;
   margin-top: 8px;
   margin-bottom: 0;
   font-size: 0.750em;
-  }
+}
 
-  .card-recipe-image {
-    display: block;
-    margin: auto;
-    width: 80%;
-    height: 100%;
-    object-fit:cover;
-    border-radius: 2%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    border: 2px solid black;
-  }
+.card-recipe-image {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  object-fit:cover;
+  border-radius: 2%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border: 2px solid black;
+}
 
-  .recipe-description, .recipe-title {
-    margin: 8px;
-  }
+.recipe-description {
+  font-size: 0.750em
+}
 
-  .deal-date {
-    margin-bottom: 0;
-    padding: 4px;
-  }
+.recipe-description, .recipe-title {
+  margin: 8px;
+  text-align: left;
+}
+
+.deal-date {
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 0.750em;
+}
+
+.deal-date > p {
+  margin-bottom: 0;
+}
