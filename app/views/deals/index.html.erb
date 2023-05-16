@@ -12,13 +12,15 @@
       <%= link_to deal do %>
       <div class="card">
         <h4><%= deal.name %></h4>
-        <div class="d-flex p-0.5" style="text-align: left;">
-          <%= deal.description %>
-
+        <div class="card-deal-description">
+          <div class="card-deal-description-text">
+            <%= deal.description %>
+          </div>
+          <div class="card-deal-image">
             <% if deal.image.attached? %>
-              <%= cl_image_tag deal.image.key, class:"card-deal-image" %>
+              <%= cl_image_tag deal.image.key, class:"card-deal-image"%>
             <% end %>
-
+          </div>
         </div>
         <ul class="category-tag p-0">
           <% if deal.user && deal.user.username.present? %>
