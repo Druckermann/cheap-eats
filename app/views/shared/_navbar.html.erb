@@ -31,16 +31,23 @@
           <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
             <%= link_to raw('<i class="fa-solid fa-magnifying-glass"></i> Find a Recipe'), recipes_path, class: "dropdown-item" %>
             <%= link_to raw('<i class="fa-solid fa-circle-plus"></i> Add a Recipe'), new_recipe_path, class: "dropdown-item" %>
-            <%= link_to raw('<i class="fa-solid fa-heart-circle-check"></i> See your saved recipes'), favorites_path, class: "dropdown-item" %>
+            <%= link_to raw('<i class="fa-solid fa-heart-circle-check"></i> See Your Saved Recipes'), favorites_path, class: "dropdown-item" %>
           </ul>
         </div>
       </div>
      <div class="col text-center">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-user"></i>
           <br>
           Profile
         </a>
+        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+          <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+          <% end %>
+        </div>
       </div>
       <!-- <div class="col text-center">
         <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +56,7 @@
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
+      </div>
       </div> -->
     </div>
   </div>
