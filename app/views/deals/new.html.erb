@@ -6,10 +6,19 @@
   <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
     <%= f.input :name %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
-    <%= f.input :price %>
-    <%= f.input :description, placeholder:"Include details such as location, RRP, time you saw the deal" %>
-    <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+    <%= f.input :price, placeholder:"$"%>
+    <%= f.input :description, as: :text, placeholder:"Include details such as location, shop name, how left in stock" %>
+    <%= f.input :start_date, as: :string,
+                input_html: {
+                data: {
+                  flatpickr_target: "startDate",
+                  flatpickr_min_date: Time.zone.now }
+                  } %>
+    <%= f.input :end_date, as: :string,
+                input_html: {
+                data: {
+                  flatpickr_target: "endDate" }
+                  } %>
     <%= f.input :image, as: :file %>
     <%= f.button :submit, class:"btn btn-secondary" %>
   <% end %>
