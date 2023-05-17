@@ -10,14 +10,16 @@ a {
 
 .card-deal-description {
   display: flex;
-  align-content: space-between;
+  justify-content: space-between;
 }
 
 .card-deal-description-text {
   text-align: left;
-  width: 225px;
+  max-width: 225px;
   height: 100px;
   font-size: 0.875em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-deal-image > img {
@@ -41,16 +43,19 @@ a {
 .card-recipe-image {
   display: block;
   margin: auto;
-  width: 80%;
+  width: 100%;
   height: 100%;
   object-fit:cover;
   border-radius: 2%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  border: 2px solid black;
 }
 
 .recipe-description {
-  font-size: 0.750em
+  font-size: 0.875em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .recipe-description, .recipe-title {
