@@ -15,6 +15,7 @@ class DealsController < ApplicationController
 
   def create
     @deal = Deal.new(deal_params)
+    @deal.submission_date = DateTime.now
     @deal.user = current_user
     business = Business.find_by(name: params[:business_name])
     @deal.business_id = business.id if business
