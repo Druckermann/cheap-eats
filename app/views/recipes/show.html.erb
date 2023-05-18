@@ -1,15 +1,19 @@
-<div class="container">
-  <h1 class="title-font"><%= @recipe.name %></h1>
-</div>
-
 <div class="card-recipe-show">
-  <div class="card" style="text-align: center;">
-    <div class="recipe-image-text">
+  <div class="card-recipe-show-top">
+    <div class="card-recipe-show-title">
+      <h1><%= @recipe.name %></h1>
+    </div>
+    <div class="card-recipe-show-image">
       <%= cl_image_tag @recipe.image.key %>
+    </div>
+    <div class="card-recipe-show-description">
       <h5><%= @recipe.description %></h5>
     </div>
+    <div class="card-favorite-button">
+      <%= render 'favorites/favorite_btn', recipe: @recipe %>
+    </div>
   </div>
-  <div class="card-small">
+  <div class="card-recipe-show-middle">
     <p><strong>Servings:</strong> <%= @recipe.servings %></p>
     <p><strong>Cook time:</strong> <%= @recipe.cook_time%> minutes</p>
     <p><strong>Prep time:</strong> <%= @recipe.prep_time%> minutes</p>
@@ -19,6 +23,9 @@
         <li><%= ingredient %></li>
       <% end %>
     </ul>
+  <div>
+
+  <div class="card-recipe-show-bottom">
     <p><strong>Instructions:</strong></p>
     <ol>
       <% @recipe.steps.split(/\d+\./).map(&:strip).each do |steps| %>
@@ -29,10 +36,7 @@
 
     </ol>
   </div>
-</div>
-
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm", style: "margin-right: 10px;" %>
-   <%= render 'favorites/favorite_btn', recipe: @recipe %>
+</div>
 </div>
