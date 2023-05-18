@@ -1,6 +1,6 @@
 .card {
   padding: 12px;
-  border-radius: 2%;
+  border-radius: 4px;
 }
 
 a {
@@ -71,4 +71,8 @@ a {
 
 .deal-date > p {
   margin-bottom: 0;
+}
+
+.font-color-user {
+  color: $purple;
 }
