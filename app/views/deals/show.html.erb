@@ -20,17 +20,15 @@
       </div>
       <ul class="category-tag p-0">
         <% if @deal.user && @deal.user.username.present? %>
-          <li> Submitted by: <%= @deal.user.username %></li>
+            <li> <%= @deal.user.username %> on <%= @deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
         <% elsif @deal.business.present? && @deal.business.name.present? %>
-          <li> Submitted by: <%= @deal.business.name %></li>
+            <li> <%= @deal.business.name %> on <%= @deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
         <% end %>
         <li><i class="fa fa-tag"></i> <%= @deal.category %></li>
       </ul>
     </div>
   </div>
 </div>
-
-<br>
 
 <h2 class="text-center m-2" >Recommended recipes</h2>
 

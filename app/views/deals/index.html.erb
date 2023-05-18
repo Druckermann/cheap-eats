@@ -1,9 +1,5 @@
 <div class="text-center">
-  <h1>Deals</h1>
-</div>
-
-<div class="text-center">
-  <%= link_to "Submit a new deal", new_deal_path, class:"btn btn-secondary" %>
+  <h1 class="title-font">Find a deal</h1>
 </div>
 
 <div class="container" style="text-align: left;">
@@ -24,9 +20,9 @@
         </div>
         <ul class="category-tag p-0">
           <% if deal.user && deal.user.username.present? %>
-            <li> Submitted by: <%= deal.user.username %></li>
-           <% elsif deal.business.present? && deal.business.name.present? %>
-            <li> Submitted by: <%= deal.business.name %></li>
+            <li> <%= deal.user.username %> on <%= deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
+          <% elsif deal.business.present? && deal.business.name.present? %>
+            <li> <%= deal.business.name %> on <%= deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
           <% end %>
             <li><i class="fa fa-tag"></i> <%= deal.category %></li>
         </ul>

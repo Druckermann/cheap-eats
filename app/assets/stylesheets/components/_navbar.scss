@@ -4,7 +4,9 @@
   width: 100%;
   height: 45px;
   padding: 0;
-  color: black;
+  color: $light-blue;
+  background-color: $purple;
+  z-index: 1;
 }
 
 .navbar-bottom .row {
@@ -37,4 +39,8 @@
 
 body {
   padding-bottom: 60px;
+}
+
+.dropdown-item {
+  color: $purple;
 }

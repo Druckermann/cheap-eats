@@ -1,29 +1,32 @@
 <div class="container">
-  <h1><%= @recipe.name %></h1>
+  <h1 class="title-font"><%= @recipe.name %></h1>
 </div>
 
 <div class="card-recipe-show">
   <div class="card" style="text-align: center;">
-    <%= cl_image_tag @recipe.image.key %>
-    <h5><%= @recipe.description %></h5>
+    <div class="recipe-image-text">
+      <%= cl_image_tag @recipe.image.key %>
+      <h5><%= @recipe.description %></h5>
+    </div>
   </div>
   <div class="card-small">
-    <p>Servings: <%= @recipe.servings %></p>
-    <p>Cook time: <%= @recipe.cook_time%> minutes</p>
-    <p>Prep time: <%= @recipe.prep_time%> minutes</p>
-    <p>Ingredients:</p>
+    <p><strong>Servings:</strong> <%= @recipe.servings %></p>
+    <p><strong>Cook time:</strong> <%= @recipe.cook_time%> minutes</p>
+    <p><strong>Prep time:</strong> <%= @recipe.prep_time%> minutes</p>
+    <p><strong>Ingredients:</strong></p>
     <ul>
       <% @recipe.ingredients.split(',').map(&:strip).each do |ingredient| %>
         <li><%= ingredient %></li>
       <% end %>
     </ul>
-    <p>Instructions:</p>
+    <p><strong>Instructions:</strong></p>
     <ol>
       <% @recipe.steps.split(/\d+\./).map(&:strip).each do |steps| %>
         <% unless steps.empty? %>
           <li><%= steps %></li>
         <% end %>
       <% end %>
+
     </ol>
   </div>
 </div>
