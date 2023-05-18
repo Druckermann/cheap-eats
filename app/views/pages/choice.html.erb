@@ -1,40 +1,23 @@
 <div class="container">
-<h1>Find a deal</h1>
-
-<%= form_tag choice_path, method: :get do %>
-  <%= label_tag :user_location, "Enter your location:" %>
-  <%= text_field_tag :user_location %>
-  <br>
-  <br>
-  <%= label_tag :distance, "Distance (km) from location:" %>
-  <%= radio_button_tag :distance, 1 %> 1 km
-  <%= radio_button_tag :distance, 3 %> 3 km
-  <%= radio_button_tag :distance, 5, checked: true %> 5 km
-
-  <%= submit_tag "Search" %>
-<% end %>
-
-
-<div>
-<h3>Distances from <%= params[:user_location] %></h3>
-<% @businesses.each do |business| %>
-  <li><%= "#{business.name} is about #{number_with_precision(business.distance_to(params[:user_location]), precision: 1)}" %> km away.</li>
-<% end %>
+  <h2>Find a deal near you!</h2>
+  <p>Enter your location:</p>
 </div>
+<br>
+<br>
 
-</div>
-<%# <div class="container">
-  <p>Deals within 5 km of <span id="place_name"><%= @place_name %>
+
+<div class="container">
+  <p>Deals within 5 km of <span id="place_name"><%= @place_name %></span>
   <%# <%= "#{@melbourne_location.latitude}, #{@melbourne_location.longitude}"%>
-
-  <%# <% @targeted_businesses.each do |business| %>
-    <%# <% puts business.latitude, business.longitude %>
-      <%# <% if business.latitude && business.longitude %>
-        <%# <li><%= "#{business.name} is about #{number_with_precision(business.distance_to([@melbourne_location.latitude, @melbourne_location.longitude]), precision: 1)}" km away.</li>  %>
-      <%# <% end %>
-  <%# <% end %>
-  <%# </ul> %>
-<%# </div> %>
+  <ul>
+  <% @targeted_businesses.each do |business| %>
+    <% puts business.latitude, business.longitude %>
+      <% if business.latitude && business.longitude %>
+        <li><%= "#{business.name} is about #{number_with_precision(business.distance_to([@melbourne_location.latitude, @melbourne_location.longitude]), precision: 1)}" %> km away.</li>
+      <% end %>
+  <% end %>
+  </ul>
+</div>
 
 
 
@@ -42,13 +25,13 @@
 
 <%# Map below %>
 
-  <%# <div style="width: 100%; height: 300px;"
+  <div style="width: 100%; height: 300px;"
     data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>
-    <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-  <%# </div> %>
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-  <%# <div id="geocoder" class="geocoder"></div> %>
+  <div id="geocoder" class="geocoder"></div>
 
 
 
