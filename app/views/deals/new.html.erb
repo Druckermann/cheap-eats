@@ -1,10 +1,10 @@
 <div class="text-center">
-  <h1>New deal</h1>
+  <h1 class="title-font">Add a deal</h1>
 </div>
 
 <div class="container">
   <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, label:"Title" %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
     <%= f.input :price, placeholder:"$"%>
     <%= f.input :description, as: :text, placeholder:"Include details such as location, shop name, how left in stock" %>
