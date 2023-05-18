@@ -2,17 +2,23 @@
   <h1 class="title-font">Favorite Recipes</h1>
 </div>
 
-<div class="card">
+<div class="container">
   <% if @recipes.any? %>
     <% @recipes.each do |recipe| %>
-      <div class="card-small">
-        <h3><%= recipe.name %></h3>
-        <% if recipe.image.attached? %>
-          <%= link_to recipe_path(recipe) do %>
-            <%= cl_image_tag recipe.image.key %>
+      <div class="row my-2 mx-2">
+        <div class="card-recipe" >
+          <h3><%= recipe.name %></h3>
+          <% if recipe.image.attached? %>
+            <%= link_to recipe_path(recipe) do %>
+              <div class="card-recipe-index-image">
+                <%= cl_image_tag recipe.image.key %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= render 'favorite_btn', recipe: recipe %>
+          <div class="card-favorite-button">
+            <%= render 'favorite_btn', recipe: recipe %>
+          </div>
+        </div>
       </div>
     <% end %>
   <% else %>
