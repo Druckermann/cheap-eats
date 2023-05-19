@@ -19,12 +19,12 @@
           </div>
         </div>
         <ul class="category-tag p-0">
-          <% if deal.user && deal.user.username.present? %>
-            <li> <%= deal.user.username %> on <%= deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
-          <% elsif deal.business.present? && deal.business.name.present? %>
-            <li> <%= deal.business.name %> on <%= deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
-          <% end %>
             <li><i class="fa fa-tag"></i> <%= deal.category %></li>
+          <% if deal.user && deal.user.username.present? %>
+            <li class="w-50"> <%= deal.user.username %> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
+          <% elsif deal.business.present? && deal.business.name.present? %>
+            <li class="w-50"> <%= deal.business.name %> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
+          <% end %>
         </ul>
       </div>
       <% end %>

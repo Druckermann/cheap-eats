@@ -14,15 +14,15 @@
       </div>
       <div class="deal-date">
         <% if @deal.start_date && @deal.end_date.present? %>
-          <p>Starts on: <%= @deal.start_date.strftime('%d-%m-%Y') %></p>
-          <p>Ends on: <%= @deal.end_date.strftime('%d-%m-%Y') %></p>
+          <p>Starts on: <%= @deal.start_date.localtime.strftime('%d-%m-%Y %H:%M') %></p>
+          <p>Ends on: <%= @deal.end_date.localtime.strftime('%d-%m-%Y %H:%M') %></p>
         <% end %>
       </div>
       <ul class="category-tag p-0">
         <% if @deal.user && @deal.user.username.present? %>
-            <li> <%= @deal.user.username %> on <%= @deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
+            <li> <%= @deal.user.username %> on <%= @deal.submission_date.localtime.try(:strftime, ('%d-%m-%Y %H:%M')) %> </li>
         <% elsif @deal.business.present? && @deal.business.name.present? %>
-            <li> <%= @deal.business.name %> on <%= @deal.submission_date.try(:strftime, ('%d-%m-%Y')) %> </li>
+            <li> <%= @deal.business.name %> on <%= @deal.submission_date.localtime.try(:strftime, ('%d-%m-%Y %H:%M')) %> </li>
         <% end %>
         <li><i class="fa fa-tag"></i> <%= @deal.category %></li>
       </ul>
@@ -30,7 +30,7 @@
   </div>
 </div>
 
-<h2 class="text-center m-2" >Recommended recipes</h2>
+<h2 class="title-font text-center m-2" >Recommended recipes</h2>
 
 <div class="container">
   <% @deal.recipes.each do |recipe| %>

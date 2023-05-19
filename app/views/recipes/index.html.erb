@@ -7,7 +7,7 @@
   <%= link_to "Favorites", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
 </div> -->
 
-<div class="container">
+<div class="container" style="text-slign: center">
   <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>
     <div class="button-row">
@@ -16,16 +16,26 @@
   <% end %>
 
 
-  <% @recipes.each do |recipe| %>
-    <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
-     <div class="card-recipe" >
-        <h2><%= recipe.name %></h2>
-       <!--<h4><%= recipe.description %></h4> -->
-         <% if recipe.image.attached? %>
-           <%= cl_image_tag recipe.image.key %>
-         <% end %>
-         <%= render 'favorites/favorite_btn', recipe: recipe %>
+  <div class="container" style="text-slign: center">
+    <% @recipes.each do |recipe| %>
+      <div class="row my-2 mx-2">
+        <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
+          <div class="card-recipe" >
+            <h2><%= recipe.name %></h2>
+            <!--<h4><%= recipe.description %></h4> -->
+            <% if recipe.image.attached? %>
+              <div class="card-recipe-index-image">
+                <%= cl_image_tag recipe.image.key %>
+              </div>
+            <% end %>
+            <div class="card-favorite-button" >
+              <%= render 'favorites/favorite_btn', recipe: recipe %>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
-  <% end %>
+    <% end %>
+  </div>
+
+
 </div>
