@@ -13,6 +13,11 @@
 @import "components/index";
 @import "pages/index";
 
+
+
+
+
+// This is for Mapbox search box position. If the map is not included it can be deleted/ignored.
 .geocoder {
   position: absolute;
   z-index: 1;

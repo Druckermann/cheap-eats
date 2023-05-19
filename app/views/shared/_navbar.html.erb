@@ -3,43 +3,58 @@
     <div class="row">
       <div class="col text-center">
         <%= link_to root_path, class: "nav-link" do %>
-          <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-house nav-icon"></i>
           <br>
-          Home
+          <span class="nav-bar-text">Home</span>
         <% end %>
       </div>
-      <div class="col text-center">
-       <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= raw('<i class="fa-solid fa-dollar-sign"></i>') %>
-            <br>
-            Deals
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
-            <%= link_to raw('<i class="fa-solid fa-magnifying-glass"></i> Find a Deal'), deals_path, class: "dropdown-item" %>
-            <%= link_to raw('<i class="fa-solid fa-circle-plus"></i> Add a Deal'), new_deal_path, class: "dropdown-item" %>
-          </ul>
+        <div class="col text-center">
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle no-caret" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= raw('<i class="fa-solid fa-dollar-sign nav-icon"></i>') %>
+              <br>
+              <span class="nav-bar-text">Deals</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
+              <%= link_to deals_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+                <span class="dropdown-item-text">Find a Deal</span>
+              <% end %>
+              <%= link_to new_deal_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-circle-plus nav-icon"></i>
+                <span class="dropdown-item-text">Add a Deal</span>
+              <% end %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col text-center">
-        <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= raw('<i class="fa-solid fa-utensils"></i>') %>
-            <br>
-            Recipes
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
-            <%= link_to raw('<i class="fa-solid fa-magnifying-glass"></i> Find a Recipe'), recipes_path, class: "dropdown-item" %>
-            <%= link_to raw('<i class="fa-solid fa-circle-plus"></i> Add a Recipe'), new_recipe_path, class: "dropdown-item" %>
-            <%= link_to raw('<i class="fa-solid fa-heart-circle-check"></i> See Your Saved Recipes'), favorites_path, class: "dropdown-item" %>
-          </ul>
+        <div class="col text-center">
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle no-caret" id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= raw('<i class="fa-solid fa-utensils nav-icon"></i>') %>
+              <br>
+              <span class="nav-bar-text">Recipes</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
+              <%= link_to recipes_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+                <span class="dropdown-item-text">Find a Recipe</span>
+              <% end %>
+              <%= link_to new_recipe_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-circle-plus nav-icon"></i>
+                <span class="dropdown-item-text">Add a Recipe</span>
+              <% end %>
+              <%= link_to favorites_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-heart-circle-check nav-icon"></i>
+                <span class="dropdown-item-text">See Your Saved Recipes</span>
+              <% end %>
+            </ul>
+          </div>
         </div>
-      </div>
      <div class="col text-center">
         <a href="#" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user nav-icon"></i>
           <br>
-          Profile
+          <span class="nav-bar-text">Profile</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="profileDropdown">
           <% if user_signed_in? %>

@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 45px;
-  padding: 0;
+  height: 56px;
+  padding: 4px;
   color: $light-blue;
   background-color: $purple;
   z-index: 1;
@@ -21,11 +21,19 @@
   padding: 0;
 }
 
+.nav-icon {
+  font-size: 36px;
+}
+
 .navbar-bottom .nav-link {
   padding: 0;
   display: block;
-  font-size: 12px;
   text-align: center;
+  line-height: 0.8;
+}
+
+.navbar-bottom .nav-link .nav-bar-text {
+  font-size: 12px;
 }
 
 .navbar-bottom .avatar {
@@ -37,10 +45,23 @@
   left: auto;
 }
 
+// AT: No idea why this is here - potential conflict? 19/05/23
 body {
   padding-bottom: 60px;
 }
+//
 
 .dropdown-item {
   color: $purple;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item-text {
+  margin: 2px;
+  color: $purple;
+}
+
+.dropdown-toggle.no-caret::after {
+  display: none;
 }

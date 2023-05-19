@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/choice", to: "pages#choice"
+
+  # AT: Commented out due to rails assets:precompile error 19/05/23
+  # get "/choice", to: "pages#choice"
   resources :favorites, only: :index
   resources :recipes, only: [:index, :show, :new, :create, :update] do
     member do
