@@ -40,6 +40,10 @@ a {
   font-size: 0.750em;
 }
 
+.category-tag > ul > li {
+  max-width: 185px;
+}
+
 .card-recipe-image {
   display: block;
   margin: auto;
