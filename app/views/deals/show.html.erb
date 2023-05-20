@@ -1,7 +1,7 @@
-<div class="container p-1">
-  <div class="card">
+<div class="container">
+  <div class="card mt-3">
     <div class="card-deal-show">
-      <h1 class="text-start"><%= @deal.name %> - $<%= @deal.price %></h1>
+      <h1 class="d-flex justify-content-between"><%= @deal.name %> <span class="font-color-price"><%= "$#{number_to_currency(@deal.price, precision: 2, format: "%n")}" %></span></h1>
       <div class="card-deal-description">
         <div class="card-deal-description-text">
           <%= @deal.description %>
@@ -14,8 +14,8 @@
       </div>
       <div class="deal-date">
         <% if @deal.start_date && @deal.end_date.present? %>
-          <p><strong>Starts on: </strong><%= @deal.start_date.localtime.strftime('%d-%m-%Y %H:%M') %></p>
-          <p><strong>Ends on: </strong><%= @deal.end_date.localtime.strftime('%d-%m-%Y %H:%M') %></p>
+          <p><strong>Starts on: </strong><%= @deal.start_date.localtime.strftime('%d-%m-%Y') %></p>
+          <p><strong>Ends on: </strong><%= @deal.end_date.localtime.strftime('%d-%m-%Y') %></p>
         <% end %>
       </div>
       <ul class="category-tag p-0">
@@ -30,11 +30,11 @@
   </div>
 </div>
 
-<h2 class="title-font text-center m-2" >Try these recipes</h2>
+<h2 class="title-font title-header text-start" >Try these recipes...</h2>
 
 <div class="container">
   <% @deal.recipes.each do |recipe| %>
-    <div class="card my-2 mx-2">
+    <div class="card my-2">
       <h3 class="recipe-title text-center"><%= link_to recipe.name, recipe_path(recipe) %></h3>
       <% if recipe.image.attached? %>
         <%= cl_image_tag recipe.image.key, class:"card-recipe-image"%>

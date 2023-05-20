@@ -49,48 +49,48 @@ Business.create(id: 7, name: "Aldi Abbotsford", street: "313 Victoria St", subur
 
 ###########################################################################
 # Deals
-deal_1 = Deal.create(name: "Chicken Drumsticks", category: "Meat", price: "1.99", description: "Found a great deal on chicken drumsticks for $1.99/kg at Woolworths Abbotsford!", start_date: "2023-05-03", end_date: "2023-05-10", user_id: 2, submission_date: "2023-05-03", url: "https://www.woolworths.com.au/shop/productdetails/23208/chicken-legs-drumsticks")
+deal_1 = Deal.create(name: "Chicken Drumsticks", business_id: 1, category: "Meat", price: "1.99", description: "Found a great deal on chicken drumsticks for $1.99/kg at Woolworths South Yarra!", start_date: "2023-05-27", end_date: "2023-06-10", user_id: 2, submission_date: "2023-05-27 12:30", url: "https://www.woolworths.com.au/shop/productdetails/23208/chicken-legs-drumsticks")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/chicken-drumsticks_svmv16.jpg')
 deal_1.image.attach(io: file, filename: 'chicken-drumsticks.jpg')
 puts "Attached image: #{deal_1.image.attached?}"
 deal_1.save
 
-deal_2 = Deal.create(name: "White Potato", category: "Vegetable", price: "0.99", description: "Stock up on white potatoes for only $0.99/kg at Queen Victoria Market in Melbourne!", start_date: "2023-05-01", end_date: "2023-05-07", user_id: 2, submission_date: "2023-05-03")
+deal_2 = Deal.create(name: "White Potato", business_id: 5, category: "Vegetable", price: "0.99", description: "Stock up on white potatoes for only $0.99/kg at Queen Victoria Market in Melbourne!", start_date: "2023-05-25", end_date: "2023-06-01", user_id: 2, submission_date: "2023-05-26 11:02")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/white-potatoes_pi84ib.jpg')
 deal_2.image.attach(io: file, filename: 'white-potato.jpg')
 deal_2.save
 
-deal_3 = Deal.create(name: "Lean Beef Mince", category: "Meat", price: "5.99", description: "Found lean beef mince on sale for $5.99/kg at Coles Richmond Icon!", start_date: "2023-05-03", end_date: "2023-05-10", user_id: 3, submission_date: "2023-05-03", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
+deal_3 = Deal.create(name: "Lean Beef Mince", business_id: 3, category: "Meat", price: "3.99", description: "Found lean beef mince on sale for $5.99/kg at Coles Richmond Icon!", start_date: "2023-05-23", end_date: "2023-05-30", user_id: 3, submission_date: "2023-05-24 19:14", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/beef-mince_q6urye.jpg')
 deal_3.image.attach(io: file, filename: 'lean-beef-mince.jpg')
 deal_3.save
 
-deal_4 = Deal.create(name: "Monterey Jack Cheese", category: "Dairy", price: "0.97", description: "Found a great deal on Monterey Jack cheese for $0.97 at Costco Docklands", start_date: "2023-05-02", end_date: "2023-05-08", user_id: 2, submission_date: "2023-05-02")
+deal_4 = Deal.create(name: "Monterey Jack Cheese", business_id: 6, category: "Dairy", price: "0.97", description: "Found a great deal on Monterey Jack cheese for $0.97 at Costco Docklands", start_date: "2023-05-24", end_date: "2023-05-31", user_id: 2, submission_date: "2023-05-23 09:52")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/cheese_h3epxw.jpg')
 deal_4.image.attach(io: file, filename: 'jack-cheese.jpg')
 deal_4.save
 
-deal_5 = Deal.create(name: "Broccoli", category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi Abbotsford!", start_date: "2023-05-01", end_date: "2023-05-07", user_id: 4, submission_date: "2023-05-02")
+deal_5 = Deal.create(name: "Broccoli", business_id: 7, category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi Abbotsford!", start_date: "2023-05-26", end_date: "2023-06-2", user_id: 4, submission_date: "2023-05-26 08:40")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/broccoli_octwgp.png')
 deal_5.image.attach(io: file, filename: 'broccoli.png')
 deal_5.save
 
-deal_6 = Deal.create(name: "Royal Gala Apples", category: "Fruit", price: "1.90", description: "Found a great deal on gala apples at IGA XPress Exhibition Street!", start_date: "2023-05-02", end_date: "2023-05-08", user_id: 2, submission_date: "2023-05-01")
+deal_6 = Deal.create(name: "Royal Gala Apples", business_id: 4, category: "Fruit", price: "1.90", description: "Found a great deal on gala apples at IGA XPress Exhibition Street!", start_date: "2023-05-21", end_date: "2023-05-28", user_id: 2, submission_date: "2023-05-22 15:11")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195889/deals/gala-apples_vrr5j6.jpg')
 deal_6.image.attach(io: file, filename: 'apples.jpg')
 deal_6.save
 
-deal_7 = Deal.create(name: "Grapes", category: "Fruit", price: "1.99", description: "Get a great deal on cotton candy grapes for $1/box in Coles Richmond Traders this week!", start_date: "2023-05-02", end_date: "2023-05-08", user_id: 4, submission_date: "2023-05-01")
+deal_7 = Deal.create(name: "Grapes", business_id: 2, category: "Fruit", price: "1.00", description: "Get a great deal on cotton candy grapes for $1/box in Coles Richmond Traders this week!", start_date: "2023-05-24", end_date: "2023-05-30", user_id: 4, submission_date: "2023-05-22 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195890/deals/grapes_jdsiab.jpg')
 deal_7.image.attach(io: file, filename: 'grapes.jpg')
 deal_7.save
 
-deal_8 = Deal.create(name: "Brown Onions", category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles Richmond Icon!", start_date: "2023-05-01", end_date: "2023-05-07", business_id: 3, submission_date: "2023-05-01")
+deal_8 = Deal.create(name: "Brown Onions", business_id: 3, category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles Richmond Icon!", start_date: "2023-05-24", end_date: "2023-05-30", business_id: 3, submission_date: "2023-05-22 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195893/deals/brown-onions_mco5nt.jpg')
 deal_8.image.attach(io: file, filename: 'onions.jpg')
 deal_8.save
 
-deal_9 = Deal.create(name: "Beef Rump Steak", category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-03", end_date: "2023-05-10", business_id: 2, submission_date: "2023-05-02")
+deal_9 = Deal.create(name: "Beef Rump Steak", business_id: 2, category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-24", end_date: "2023-05-30", business_id: 2, submission_date: "2023-05-22 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195889/deals/rump-steak_imkmud.jpg')
 deal_9.image.attach(io: file, filename: 'rump-steak.jpg')
 deal_9.save
@@ -125,13 +125,13 @@ recipe_2.save
 
 
 recipe_3 = Recipe.create(
-name: "Baked Chicken Drumsticks",
-description: "These chicken drumsticks are really easy to prepare and cook, and slow baking them in the oven means a lot of extra flavours and sealed into the meat. Perfect for a Sunday lunch or even a weeknight meal.",
-servings: 4,
-cook_time: 85,
-prep_time: 15,
-ingredients: "8 chicken drumstick, ¼ cup olive oil, 15 g butter, 2 bulbs fennel bulb cored cut into wedges, 700 g Kipfler potato halved, 1 red onion cut into wedges, 1 lemon cut into wedges, 1 cup chicken stock, 250 g cherry truss tomato",
-steps: "1. Preheat oven to 200 C or 180 C fan-forced. 2. Season drumsticks. Heat 2 tablespoons of oil and butter in a large frying pan over medium heat. Cook chicken, turning, for 10 minutes or until browned. 3. Meanwhile, place fennel, potatoes and onion on a large oven tray. Drizzle with remaining oil. Season and toss to coat. Squeeze lemon wedges and add to tray. Nestle chicken amongst vegetables. 4. Add stock to frying pan and scrape base to dislodge any brown bits. Pour over vegetables. Bake for 1 hour, basting chicken and vegetables halfway through. 5. Increase oven to 220 C or 200 C fan forced. Add tomatoes and bake for 15 minutes."
+  name: "Baked Chicken Drumsticks",
+  description: "Perfect for a Sunday lunch or even a weeknight meal.",
+  servings: 4,
+  cook_time: 85,
+  prep_time: 15,
+  ingredients: "8 chicken drumstick, ¼ cup olive oil, 15 g butter, 2 bulbs fennel bulb cored cut into wedges, 700 g Kipfler potato halved, 1 red onion cut into wedges, 1 lemon cut into wedges, 1 cup chicken stock, 250 g cherry truss tomato",
+  steps: "1. Preheat oven to 200 C or 180 C fan-forced. 2. Season drumsticks. Heat 2 tablespoons of oil and butter in a large frying pan over medium heat. Cook chicken, turning, for 10 minutes or until browned. 3. Meanwhile, place fennel, potatoes and onion on a large oven tray. Drizzle with remaining oil. Season and toss to coat. Squeeze lemon wedges and add to tray. Nestle chicken amongst vegetables. 4. Add stock to frying pan and scrape base to dislodge any brown bits. Pour over vegetables. Bake for 1 hour, basting chicken and vegetables halfway through. 5. Increase oven to 220 C or 200 C fan forced. Add tomatoes and bake for 15 minutes."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/baked-chicken-drumsticks_lop02e.jpg')
 recipe_3.image.attach(io: file, filename: 'baked-drumsticks.jpg')
@@ -141,13 +141,13 @@ deal_1.recipes = [recipe_1, recipe_2, recipe_3]
 puts "deal_1 recipes associated"
 
 recipe_4 = Recipe.create(
-name: "Roast Chicken Traybake Dinner For Two",
-description: "This delicious garlic and thyme roast chicken traybake makes enough for two. Simply throw everything onto a tray and let the oven do the rest.",
-servings: 2,
-cook_time: 40,
-prep_time: 10,
-ingredients: "2 tbsp extra virgin olive oil, 2 tsp smoked paprika, 2 tsp fresh thyme leaves plus extra small springs to serve, 2 garlic cloves crushed, 2 chicken thigh cutlets with skin and bone, 2 chicken drumsticks, 6 baby potatoes halved, 2 corn cobs halved, 250 g cocktail truss tomatoes cut into small bunches, warm roast chicken gravy with herbs.",
-steps: "1. Preheat the oven to 200°C. 2. Mix together the oil, smoked paprika, thyme leaves, and garlic in a small bowl. 3. Cut the potatoes into small cubes and add them to a roasting tin along with the chicken breasts. Drizzle over the spiced oil and toss everything together until well coated. 4. Roast for 20-25 minutes until the chicken is golden brown and cooked through and the potatoes are tender. 5. Serve with steamed green beans and extra thyme leaves, if you like."
+  name: "Roast Chicken Traybake Dinner",
+  description: "Simply throw everything onto a tray and let the oven do the rest.",
+  servings: 2,
+  cook_time: 40,
+  prep_time: 10,
+  ingredients: "2 tbsp extra virgin olive oil, 2 tsp smoked paprika, 2 tsp fresh thyme leaves plus extra small springs to serve, 2 garlic cloves crushed, 2 chicken thigh cutlets with skin and bone, 2 chicken drumsticks, 6 baby potatoes halved, 2 corn cobs halved, 250 g cocktail truss tomatoes cut into small bunches, warm roast chicken gravy with herbs.",
+  steps: "1. Preheat the oven to 200°C. 2. Mix together the oil, smoked paprika, thyme leaves, and garlic in a small bowl. 3. Cut the potatoes into small cubes and add them to a roasting tin along with the chicken breasts. Drizzle over the spiced oil and toss everything together until well coated. 4. Roast for 20-25 minutes until the chicken is golden brown and cooked through and the potatoes are tender. 5. Serve with steamed green beans and extra thyme leaves, if you like."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/roast-chicken-traybake_ffyedp.jpg')
 recipe_4.image.attach(io: file, filename: 'chicken-traybake.jpg')
@@ -181,7 +181,7 @@ recipe_6.save
 
 recipe_7 = Recipe.create(
   name: "Mexican Beef",
-  description: "A very versatile and healthy Mexican beef filling/topping for tacos, nachos and burritos. It is also great with rice.",
+  description: "A very versatile and healthy Mexican beef filling/topping for tacos, nachos and burritos.",
   servings: 6,
   cook_time: 30,
   prep_time: 10,
@@ -220,7 +220,7 @@ recipe_9.save
 
 recipe_10 = Recipe.create(
   name: "Stuffed Capsicums",
-  description: "These stuffed capsicums make an easy, healthy, low-carb dinner. Whether you're entertaining or just looking for a different way to use up mince meat, these Italian-style stuffed capsicums are mouth wateringly delicious.",
+  description: "These stuffed capsicums make an easy, healthy, low-carb dinner.",
   servings: 6,
   cook_time: 75,
   prep_time: 15,
