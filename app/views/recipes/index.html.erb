@@ -2,11 +2,6 @@
   <h1 class="title-font">Recipes</h1>
 </div>
 
-<!--<div class="container">
-  <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
-  <%= link_to "Favorites", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
-</div> -->
-
 <div class="container" style="text-align: center">
   <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>

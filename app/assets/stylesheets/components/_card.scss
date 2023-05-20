@@ -15,7 +15,7 @@ a {
 
 .card-deal-description-text {
   text-align: left;
-  max-width: 225px;
+  max-width: 200px;
   height: 100px;
   font-size: 0.875em;
   overflow: hidden;
@@ -29,6 +29,14 @@ a {
   border-radius: 2%;
   border: 0.5px solid black;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.user-submit {
+  max-width: 200px;
+}
+
+.business-submit {
+  max-width: 150px;
 }
 
 .category-tag {
