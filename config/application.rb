@@ -15,6 +15,10 @@ module CheapEats
       generate.test_framework :test_unit, fixture: false
     end
     # Initialize configuration defaults for originally generated Rails version.
+    # AT: Added to help with application.js error 20/05/23
+    config.assets.enabled = true
+
+
     config.load_defaults 7.0
     config.time_zone = 'Sydney'
     # Configuration for the application, engines, and railties goes here.
