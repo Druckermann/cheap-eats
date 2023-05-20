@@ -5,21 +5,23 @@
 <div class="container">
   <% if @recipes.any? %>
     <% @recipes.each do |recipe| %>
-      <div class="row my-2 mx-2">
-        <div class="card-recipe" >
-          <h3><%= recipe.name %></h3>
-          <% if recipe.image.attached? %>
-            <%= link_to recipe_path(recipe) do %>
+        <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
+          <div class="card-recipe" >
+            <div class="recipe-title">
+              <%= recipe.name %>
+            </div>
+            <div class="card-favorite-button" >
+              <%= render 'favorites/favorite_btn', recipe: recipe %>
+            </div>
+            <% if recipe.image.attached? %>
               <div class="card-recipe-index-image">
-                <%= cl_image_tag recipe.image.key %>
+                <a href="<%= recipe_path(recipe) %>">
+                  <%= cl_image_tag recipe.image.key %>
+                </a>
               </div>
             <% end %>
-          <% end %>
-          <div class="card-favorite-button">
-            <%= render 'favorite_btn', recipe: recipe %>
           </div>
-        </div>
-      </div>
+        </a>
     <% end %>
   <% else %>
     <p>You haven't added any recipes to your favourites yet.</p>
