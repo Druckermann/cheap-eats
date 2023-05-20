@@ -1,18 +1,9 @@
 // Specific CSS for your home-page
 
 .home-page {
-  height: 100vh;
+  overflow: hidden;
+}
+
+.home-page {
   background-color: $light-blue;
-}
-
-.home-starters-btn {
-  background-color: #f1f1f1;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin: 12px;
-}
-
-.home-starters-text {
-  margin-bottom: 10px;
-  color: $purple
 }
