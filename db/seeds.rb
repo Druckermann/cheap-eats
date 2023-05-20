@@ -85,12 +85,12 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195890/d
 deal_7.image.attach(io: file, filename: 'grapes.jpg')
 deal_7.save
 
-deal_8 = Deal.create(name: "Brown Onions", business_id: 3, category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles Richmond Icon!", start_date: "2023-05-24", end_date: "2023-05-30", business_id: 3, submission_date: "2023-05-22 17:00")
+deal_8 = Deal.create(name: "Brown Onions", business_id: 3, category: "Vegetable", price: "0.99", description: "Stock up on fresh brown onions for only $0.99/5kg at Coles Richmond Icon!", start_date: "2023-05-24", end_date: "2023-05-30", submission_date: "2023-05-22 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195893/deals/brown-onions_mco5nt.jpg')
 deal_8.image.attach(io: file, filename: 'onions.jpg')
 deal_8.save
 
-deal_9 = Deal.create(name: "Beef Rump Steak", business_id: 2, category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-24", end_date: "2023-05-30", business_id: 2, submission_date: "2023-05-22 17:00")
+deal_9 = Deal.create(name: "Beef Rump Steak", business_id: 2, category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-24", end_date: "2023-05-30", submission_date: "2023-05-22 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195889/deals/rump-steak_imkmud.jpg')
 deal_9.image.attach(io: file, filename: 'rump-steak.jpg')
 deal_9.save
