@@ -1,8 +1,11 @@
-<% if current_user.favorited?(recipe) %>
-  <%= link_to '', toggle_favorite_recipe_path(recipe), class: "fa-solid fa-heart heart-icon", data: { turbo_method: :post } %>
-<% else %>
-  <%= link_to '', toggle_favorite_recipe_path(recipe), class: "fa-regular fa-heart heart-icon", data: { turbo_method: :post } %>
-<% end %>
+<div class="favorite-button" data-controller="heart"data-heart-target="heart" data-action="click->heart#updateHeart">
+  <% if current_user.favorited?(recipe) %>
+    <%= link_to '', toggle_favorite_recipe_path(recipe), id:"heart-button-solid", class: "fa-solid fa-heart heart-icon", data: { turbo_method: :post } %>
+  <% else %>
+    <%= link_to '', toggle_favorite_recipe_path(recipe), id:"heart-button", class: "fa-regular fa-heart heart-icon", data: { turbo_method: :post } %>
+  <% end %>
+</div>
+
 
  <!-- <i class="fa-solid fa-heart"></i> -->
  <!-- <i class="fa-regular fa-heart"></i> -->
