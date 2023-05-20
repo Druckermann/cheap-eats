@@ -8,7 +8,7 @@ a {
   color: black;
 }
 
-.card-deal-description {
+.card-deal-description, .category-tag {
   display: flex;
   justify-content: space-between;
 }
@@ -32,16 +32,10 @@ a {
 }
 
 .category-tag {
-  display: flex;
   list-style-type: none;
-  justify-content: space-between;
   margin-top: 8px;
   margin-bottom: 0;
   font-size: 0.750em;
-}
-
-.category-tag > ul > li {
-  max-width: 185px;
 }
 
 .card-recipe-image {
@@ -75,8 +69,4 @@ a {
 
 .deal-date > p {
   margin-bottom: 0;
-}
-
-.font-color-user {
-  color: $purple;
 }

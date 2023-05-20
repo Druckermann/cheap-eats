@@ -1,26 +1,26 @@
-<div class="text-center">
+<div>
   <h1 class="title-font">Add a deal</h1>
 </div>
 
 <div class="card">
   <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
-    <%= f.input :name, label:"Title" %>
+    <%= f.input :name, label:"Title", placeholder:"Deal title - (50 characters max)" %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
     <%= f.input :price, placeholder:"$"%>
-    <%= f.input :description, as: :text, placeholder:"Include details such as location, shop name, how left in stock" %>
-    <%= f.input :start_date, as: :string,
+    <%= f.input :description, as: :text, placeholder:"Include details such as location, shop name, how left in stock. (150 characters max)" %>
+    <%= f.input :start_date, label:"Start date (if known)", as: :string,
                 input_html: {
                 data: {
                   flatpickr_target: "startDate",
                   flatpickr_min_date: Date.today.to_s}
                   } %>
-    <%= f.input :end_date, as: :string,
+    <%= f.input :end_date, label:"End date (if known)", as: :string,
                 input_html: {
                 data: {
                   flatpickr_target: "endDate",
                   flatpickr_min_date: Date.today.to_s }
                   } %>
     <%= f.input :image, as: :file %>
-    <%= f.button :submit, class:"btn btn-secondary" %>
+    <%= f.button :submit, class:"btn btn-primary" %>
   <% end %>
 </div>

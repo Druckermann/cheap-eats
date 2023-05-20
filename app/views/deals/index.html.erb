@@ -7,7 +7,7 @@
     <div class="row my-2 mx-2">
       <%= link_to deal do %>
       <div class="card">
-        <h4><%= deal.name %></h4>
+        <h5><%= deal.name %> - $<%= deal.price %></h5>
         <div class="card-deal-description">
           <div class="card-deal-description-text">
             <%= deal.description %>
@@ -19,12 +19,12 @@
           </div>
         </div>
         <ul class="category-tag p-0">
-            <li><i class="fa fa-tag"></i> <%= deal.category %></li>
           <% if deal.user && deal.user.username.present? %>
-            <li class="w-50"> <%= deal.user.username %> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
+            <li class="w-50"> <strong class="font-color-user"><%= deal.user.username %> </strong>on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
           <% elsif deal.business.present? && deal.business.name.present? %>
-            <li class="w-50"> <%= deal.business.name %> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
+            <li class="w-50"> <strong class="font-color-user"><%= deal.business.name %></strong> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
           <% end %>
+            <li><i class="fa fa-tag"></i> <%= deal.category %></li>
         </ul>
       </div>
       <% end %>
