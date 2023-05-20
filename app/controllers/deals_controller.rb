@@ -3,6 +3,11 @@ class DealsController < ApplicationController
 
   def index
     @deals = Deal.all
+    if params[:search].present?
+      search_term = params[:search].downcase
+      @deals = @deals.where("lower(name) LIKE ?", "%#{search_term}%")
+    end
+    @deals = @deals.order(submission_date: :desc)
   end
 
   def show

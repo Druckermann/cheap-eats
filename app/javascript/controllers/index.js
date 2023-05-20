@@ -15,3 +15,4 @@ application.register("map", MapController)
 
 import NavButtonController from "./nav_button_controller"
 application.register("nav-button", NavButtonController)
+//

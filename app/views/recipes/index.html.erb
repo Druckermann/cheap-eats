@@ -10,32 +10,32 @@
 <div class="container" style="text-align: center">
   <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes"%>
-    <div class="button-row">
+    <div class="button-row" style="margin-bottom: 10px;">
       <%= submit_tag "Search", name: nil, class: "btn btn-primary search-button"%>
     </div>
   <% end %>
 
-
-  <div class="container" style="text-slign: center">
+  <div class="container" style="text-align: center, width: 100%;">
     <% @recipes.each do |recipe| %>
-      <div class="row my-2 mx-2">
         <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
           <div class="card-recipe" >
-            <h2><%= recipe.name %></h2>
-            <!--<h4><%= recipe.description %></h4> -->
-            <% if recipe.image.attached? %>
-              <div class="card-recipe-index-image">
-                <%= cl_image_tag recipe.image.key %>
-              </div>
-            <% end %>
+            <div class="recipe-title">
+              <%= recipe.name %>
+            </div>
             <div class="card-favorite-button" >
               <%= render 'favorites/favorite_btn', recipe: recipe %>
             </div>
+            <% if recipe.image.attached? %>
+              <div class="card-recipe-index-image">
+                <a href="<%= recipe_path(recipe) %>">
+                  <%#= render 'favorites/favorite_btn', recipe: recipe %>
+                  <%= cl_image_tag recipe.image.key %>
+                </a>
+              </div>
+            <% end %>
           </div>
         </a>
-      </div>
     <% end %>
   </div>
-
 
 </div>

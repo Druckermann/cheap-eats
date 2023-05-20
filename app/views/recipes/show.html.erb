@@ -1,16 +1,18 @@
 <div class="card-recipe-show">
   <div class="card-recipe-show-top">
-    <div class="card-recipe-show-title">
-      <h1><%= @recipe.name %></h1>
+    <div class="recipe-show-title-top">
+      <div class="card-recipe-show-title">
+        <%= @recipe.name %>
+      </div>
+      <div class="card-favorite-button-show">
+        <%= render 'favorites/favorite_btn', recipe: @recipe %>
+      </div>
     </div>
     <div class="card-recipe-show-image">
       <%= cl_image_tag @recipe.image.key %>
     </div>
     <div class="card-recipe-show-description">
       <h5><%= @recipe.description %></h5>
-    </div>
-    <div class="card-favorite-button">
-      <%= render 'favorites/favorite_btn', recipe: @recipe %>
     </div>
   </div>
   <div class="card-recipe-show-middle">
@@ -38,5 +40,4 @@
   </div>
   <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <%= link_to "Return to recipes", recipes_path, class: "btn btn-secondary btn-sm", style: "margin-right: 10px;" %>
-</div>
 </div>
