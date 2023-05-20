@@ -1,59 +1,66 @@
 <div class="d-flex navbar-bottom">
   <div class="container-fluid">
     <div class="row">
+    <!--Home-->
       <div class="col text-center">
-        <%= link_to root_path, class: "nav-link" do %>
+        <%= link_to root_path, class: "nav-link #{'selected' if current_page?(root_path)}" do %>
           <i class="fa-solid fa-house nav-icon"></i>
           <br>
-          <span class="nav-bar-text">Home</span>
+          <span class="nav-bar-text <%= 'selected' if current_page?(root_path) %>">Home</span>
         <% end %>
       </div>
-        <div class="col text-center">
-          <div class="dropdown">
-            <a href="#" class="nav-link dropdown-toggle no-caret" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <!--Deals-->
+      <div class="col text-center">
+        <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(deals_path) || current_page?(new_deal_path) %>"
+              id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <%= raw('<i class="fa-solid fa-dollar-sign nav-icon"></i>') %>
               <br>
-              <span class="nav-bar-text">Deals</span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
-              <%= link_to deals_path, class: "dropdown-item" do %>
-                <i class="fa-solid fa-magnifying-glass nav-icon"></i>
-                <span class="dropdown-item-text">Find a Deal</span>
-              <% end %>
-              <%= link_to new_deal_path, class: "dropdown-item" do %>
-                <i class="fa-solid fa-circle-plus nav-icon"></i>
-                <span class="dropdown-item-text">Add a Deal</span>
-              <% end %>
-            </ul>
-          </div>
+            <span class="nav-bar-text <%= 'selected' if current_page?(deals_path) || current_page?(new_deal_path) %>">Deals</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
+            <%= link_to deals_path, class: "dropdown-item" do %>
+              <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+              <span class="dropdown-item-text">Find a Deal</span>
+            <% end %>
+            <%= link_to new_deal_path, class: "dropdown-item" do %>
+              <i class="fa-solid fa-circle-plus nav-icon"></i>
+              <span class="dropdown-item-text">Add a Deal</span>
+            <% end %>
+          </ul>
         </div>
-        <div class="col text-center">
-          <div class="dropdown">
-            <a href="#" class="nav-link dropdown-toggle no-caret" id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <%= raw('<i class="fa-solid fa-utensils nav-icon"></i>') %>
-              <br>
-              <span class="nav-bar-text">Recipes</span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
-              <%= link_to recipes_path, class: "dropdown-item" do %>
-                <i class="fa-solid fa-magnifying-glass nav-icon"></i>
-                <span class="dropdown-item-text">Find a Recipe</span>
-              <% end %>
-              <%= link_to new_recipe_path, class: "dropdown-item" do %>
-                <i class="fa-solid fa-circle-plus nav-icon"></i>
-                <span class="dropdown-item-text">Add a Recipe</span>
-              <% end %>
-              <%= link_to favorites_path, class: "dropdown-item" do %>
-                <i class="fa-solid fa-heart-circle-check nav-icon"></i>
-                <span class="dropdown-item-text">See Your Saved Recipes</span>
-              <% end %>
-            </ul>
-          </div>
+      </div>
+      <!--Recipes-->
+      <div class="col text-center">
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(recipes_path) || current_page?(new_recipe_path) || current_page?(favorites_path) %>"
+            id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= raw('<i class="fa-solid fa-utensils nav-icon"></i>') %>
+            <br>
+          <span class="nav-bar-text <%= 'selected' if current_page?(destroy_user_session_path) || current_page?(new_user_session_path) %>">Recipes</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
+            <%= link_to recipes_path, class: "dropdown-item" do %>
+              <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+              <span class="dropdown-item-text">Find a Recipe</span>
+            <% end %>
+            <%= link_to new_recipe_path, class: "dropdown-item" do %>
+              <i class="fa-solid fa-circle-plus nav-icon"></i>
+              <span class="dropdown-item-text">Add a Recipe</span>
+            <% end %>
+            <%= link_to favorites_path, class: "dropdown-item" do %>
+              <i class="fa-solid fa-heart-circle-check nav-icon"></i>
+              <span class="dropdown-item-text">See Your Saved Recipes</span>
+            <% end %>
+          </ul>
         </div>
-     <div class="col text-center">
-        <a href="#" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-user nav-icon"></i>
-          <br>
+      </div>
+      <!--Profile-->
+      <div class="col text-center">
+          <a href="#" class="nav-link <%= 'selected' if current_page?(destroy_user_session_path) || current_page?(new_user_session_path) %>"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user nav-icon"></i>
+            <br>
           <span class="nav-bar-text">Profile</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="profileDropdown">

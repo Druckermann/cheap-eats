@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import NavButtonController from "./nav_button_controller"
+application.register("nav-button", NavButtonController)

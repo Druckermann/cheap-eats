@@ -45,6 +45,15 @@
   left: auto;
 }
 
+// Change colour when selected
+.navbar-bottom .selected .nav-icon,
+.navbar-bottom .selected .nav-bar-text {
+  color: $orange;
+}
+
+
+
+
 // AT: No idea why this is here - potential conflict? 19/05/23
 body {
   padding-bottom: 60px;
