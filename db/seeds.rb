@@ -309,7 +309,7 @@ recipe_16 = Recipe.create(
   cook_time: 70,
   prep_time: 10,
   ingredients: "1 brown onion large thinly sliced, 6 potatoes large peeled and sliced, 300 mL sour cream, 46 g French onion soup mix, 1 tsp milk, 1 cup tasty cheese grated",
-  steps: "1. Preheat oven to 180-200C. In a frying pan with a little butter, slowly cook onion until caramelised and brown. Stir together sour cream and soup mix. Add just a dash of milk to make a saucy consistency. On the bottom of a small casserole dish add a layer of potato. Smooth over a quarter of the sour cream, onion and sprinkle with cheese. Repeat layers 4 times, finishing with sour cream, onion and cheese. Cover with lid and cook in microwave for 10 minutes on high. Place in oven for about 45 minutes or until potato is cooked through. Remove lid and cook for 10 minutes more."
+  steps: "1. Preheat oven to 180-200C. 2. In a frying pan with a little butter, slowly cook onion until caramelised and brown. 3. Stir together sour cream and soup mix. Add just a dash of milk to make a saucy consistency. 4. On the bottom of a small casserole dish add a layer of potato. Smooth over a quarter of the sour cream, onion and sprinkle with cheese. 5. Repeat layers 4 times, finishing with sour cream, onion and cheese. 6. Cover with lid and cook in microwave for 10 minutes on high. 7. Place in oven for about 45 minutes or until potato is cooked through. 8. Remove lid and cook for 10 minutes more."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195577/recipes/french-onion-potato-bake_hl6ebq.jpg')
 recipe_16.image.attach(io: file, filename: 'french-bake.jpg')
