@@ -1,0 +1,11 @@
+meta_product_name: "Cheap Eats"
+meta_title: "Cheap Eats - Find a deal, grab a recipe and eat better for less!"
+meta_description: "Cheap Eats helps you find great deals on basic ingredients like fruit, vegetables, meat, dairy and pasta. If you're not sure how to use them in the kitchen we've got recipes to help!"
+meta_image: "ce-logo-og.png" # should exist in `app/assets/images/`
+
+og:
+  title: "Cheap Eats - Find a deal, grab a recipe and eat better for less!"
+  description: "Cheap Eats helps you find great deals on basic ingredients like fruit, vegetables, meat, dairy and pasta. If you're not sure how to use them in the kitchen we've got recipes to help!"
+  type: "website"
+  url: "https://www.cheapeats.deals"
+  image: "ce-logo-og.png"
