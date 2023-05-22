@@ -5,14 +5,37 @@
   background-color: $light-blue;
 }
 
+.home-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#home-logo {
+  width: 100%;
+  height: auto;
+}
+
 .home-starters-btn {
-  background-color: #f1f1f1;
+  display: block;
+  height: 80px;
+  // width: 100%;
+  background-color: $mid-blue;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .home-starters-text {
-  margin-bottom: 10px;
-  color: $purple
+  color: $purple;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.home-starters-icon {
+  font-size: 1.2em;
+  margin-right: 40px;
+  color: $purple;
 }
