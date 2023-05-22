@@ -2,18 +2,19 @@
   <h1 class="title-font title-header">Add a recipe</h1>
 </div>
 
-<div class="card">
+<div class="card-recipe-new">
   <%= simple_form_for @recipe do |f| %>
-    <%= f.input :name %>
-    <%= f.input :image, as: :file %>
-    <%= f.input :description %>
-    <%= f.input :cook_time, placeholder:"in minutes" %>
-    <%= f.input :prep_time, placeholder:"in minutes" %>
-    <%= f.input :servings %>
-    <%= f.input :ingredients, placeholder:"Please separate each ingredients by a comma (,)" %>
-    <%= f.input :steps, placeholder: "Please separate each step in the instructions by using a number followed by a period (.)"%>
-    <div style="text-align: center;">
-      <%= f.button :submit, class:"btn btn-primary" %> <%= link_to "Go to recipes", recipes_path, class: "btn btn-primary" %>
+    <%= f.input :name, label: "Title (50 char. max)", placeholder:"Recipes title", input_html: { class: 'f-input-custom', maxlength: 50 } %>
+    <%= f.input :description, label: "Short description (190 char. max)", placeholder:"A great dish for winter ...", input_html: { class: 'f-input-custom', maxlength: 190 } %>
+    <%= f.input :prep_time, label: "Prep time (in minutes)", placeholder:"In minutes", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :cook_time, label: "Cook time (in minutes)", placeholder:"In minutes", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :servings, placeholder:"How many people can it be feed?", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :ingredients, label: "Ingredients (use a comma)", placeholder:"1 tbsp oil, 1 onion, 3 tomatoes ...", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :steps, label: "Steps (use a number and fullstop)", placeholder: "1. Fry onion. 2. Add tomatoes ...", input_html: { class: 'f-input-custom' }%>
+    <%= f.input :image, as: :file, input_html: { class: 'f-input-custom' } %>
+    <div style="card">
+      <%= f.button :submit, class:"btn-btn-recipe-new" %>
+      <%#= link_to "Go to recipes", recipes_path, class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
