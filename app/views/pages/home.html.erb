@@ -1,18 +1,24 @@
 <div class="home-page">
-
-  <div class="container">
-    <img src="https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683788167/Cheap%20Eats%20misc/ce-logo_kjg3tz.png" style="width: 100%; height: auto;">
+  <div class="container home-container">
+    <img src="https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683788167/Cheap%20Eats%20misc/ce-logo_kjg3tz.png" id="home-logo">
   </div>
 
   <div class="container">
-    <center>
-      <%= link_to "Find a deal", deals_path, class: "home-starters-btn home-starters-text title-font"%>
-    </center>
-
-    <center>
-      <%= link_to "Grab a recipe", recipes_path, class: "btn btn-secondary title-font"%>
-    </center>
+    <span>Find a deal, grab a recipe and eat better for less!</span>
   </div>
 
-<p>hello from home.html.erb</p>
+  <div class="container home-container">
+    <div>
+        <a href="<%= deals_path %>" class="home-starters-btn title-font">
+          <span class="home-starters-text">Find a deal</span>
+          <i class="fas fa-chevron-right home-starters-icon"></i>
+        </a>
+
+        <a href="<%= recipes_path %>" class="home-starters-btn title-font">
+          <span class="home-starters-text">Grab a recipe</span>
+          <i class="fas fa-chevron-right home-starters-icon"></i>
+        </a>
+    </div>
+  </div>
+
 </div>
