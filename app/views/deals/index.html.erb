@@ -4,7 +4,7 @@
   <div class="search-bar">
     <%= form_tag deals_path, method: :get do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search deals"%>
-      <%= submit_tag "Search", name: nil, class: "btn btn-primary search-button"%>
+      <%= submit_tag "Search", name: nil, class: "btn-recipe-search-button"%>
     <% end %>
   </div>
 </div>
@@ -28,7 +28,7 @@
           <% if deal.user && deal.user.username.present? %>
             <li class="user-submit"> <strong class="font-color-user"><%= deal.user.username %> </strong>on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
           <% elsif deal.business.present? && deal.business.name.present? %>
-            <li class="business-submit"> <strong class="font-color-user"><%= deal.business.name %></strong> on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
+            <li class="business-submit"> <strong class="font-color-user"><%= deal.business.name %> </strong>on <%= deal.submission_date.localtime.strftime('%d-%m-%Y %H:%M') %> </li>
           <% end %>
             <li><i class="fa fa-tag"></i> <%= deal.category %></li>
         </ul>
