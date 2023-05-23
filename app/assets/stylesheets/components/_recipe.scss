@@ -1,7 +1,8 @@
 .recipe-container {
   text-align: center;
-  padding: 8px;
+  padding: 0px;
 }
+
 .heart-icon {
   text-decoration: none;
   //color: grayscale($color: #5f5e5e);
@@ -20,11 +21,10 @@
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  margin-bottom: 10px;
   background-color: white;
+  border-radius: 4px;
   width: 351px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+  margin: 12px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -45,7 +45,7 @@
   text-decoration: none;
   color: black;
   height: 49px;
-  width: 220px;
+  width: 270px;
   margin-top: 10px;
   // align-items: flex-start;
   margin-left: 10px;
@@ -62,10 +62,6 @@
   padding: 10px;
 }
 
-// .container {
-//   text-align: center;
-//   margin-bottom: 10px;
-// }
 
 .button-row {
   margin-top: 10px;
@@ -83,11 +79,11 @@
 
 .card-recipe-index-image {
   width: 270px;
-  height: 100px;
+  height: 130px;
   overflow: hidden;
   flex: 0 0 auto;
   margin: 0 10px;
-  padding-bottom: 2px;
+  padding-bottom: 10px;
 }
 
 .card-recipe-index-image img {
@@ -134,10 +130,10 @@
 
 .card-recipe-show-description{
   flex: 0 0 auto;
-  margin-right: 10px;
-  margin-bottom: 20px;
   margin-top: 10px;
+  align-items: center;
 }
+
 
 .card-recipe-show-middle{
   background-color: white;
@@ -152,9 +148,13 @@
 .card-favorite-button-show {
   height: 44px;
   width: 44px;
-  margin-left: 30px;
+  //margin-left: 30px;
   margin-top: 20px;
+  position: relative;
+  margin-top: auto;
+  margin-right: 3px;
 }
+
 
 .f-input-custom {
   border-color: #23CAEB;
@@ -163,4 +163,3 @@
 
 .card-recipe-new {
   padding: 10px;
-}
