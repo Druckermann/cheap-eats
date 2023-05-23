@@ -1,19 +1,13 @@
 <h1 class="title-font title-header">Recipes</h1>
 
-
-<!--<div class="container">
-  <%= link_to "Upload a recipe", new_recipe_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
-  <%= link_to "Favorites", favorites_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
-</div> -->
-
-
-<div class="search-bar-recipe">
-  <%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Type an ingredient", class: "search-box" %>
-    <%= submit_tag "Search", name: nil, class: "btn-recipe-search-button"%>
-  <% end %>
+<div class="container">
+  <div class="search-bar">
+    <%= form_tag recipes_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Type an ingredient", class: "search-box" %>
+      <%= submit_tag "Search", name: nil, class: "btn-recipe-search-button"%>
+    <% end %>
+  </div>
 </div>
-
 
 <div class="recipe-container">
   <% @recipes.each do |recipe| %>

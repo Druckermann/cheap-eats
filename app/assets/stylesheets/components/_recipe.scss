@@ -2,6 +2,7 @@
   text-align: center;
   padding: 0px;
 }
+
 .heart-icon {
   text-decoration: none;
   //color: grayscale($color: #5f5e5e);
@@ -19,14 +20,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  //align-items: center;
   text-align: center;
   background-color: white;
-  // height: 160px;
-  // width: 288px;
-  margin: 12px;
-  margin-bottom: 12px;
   border-radius: 4px;
+  width: 351px;
+  margin: 12px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -64,10 +62,6 @@
   padding: 10px;
 }
 
-// .container {
-//   text-align: center;
-//   margin-bottom: 10px;
-// }
 
 .button-row {
   margin-top: 10px;
@@ -136,7 +130,6 @@
 
 .card-recipe-show-description{
   flex: 0 0 auto;
-  //margin-bottom: 5px;
   margin-top: 10px;
   align-items: center;
 }
@@ -168,42 +161,5 @@
   border-radius: 10px;
 }
 
-.search-bar-recipe {
-  align-items: center;
-  width: 355px;
-  height: 50px;
-  justify-content: flex-start;
-  display: flex;
-  padding-left: 10px;
-  padding-right: -5px;
-}
-.search-box {
-  border-color: #23CAEB;
-  border-radius: 10px;
-  justify-content: center;
-  width: 270px;
-  // max-width: 250px;
-}
-
 .card-recipe-new {
   padding: 10px;
-}
-
-.btn-btn-recipe-new {
-  color: #5023EB;
-  border-radius: 10px;
-  background-color: #23CAEB;
-  width: 355px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.btn-recipe-search-button {
-  color: #5023EB;
-  border-radius: 15px;
-  background-color: #23CAEB;
-  font-weight: bold;
-  margin-right: auto;
-  border: none;
-  height: 30px;
-}
