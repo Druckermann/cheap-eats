@@ -35,7 +35,7 @@
 <div class="container">
   <% @deal.recipes.each do |recipe| %>
     <div class="card my-2">
-      <h3 class="recipe-title text-center"><%= link_to recipe.name, recipe_path(recipe) %></h3>
+      <h3 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe) %></h3>
       <% if recipe.image.attached? %>
         <%= cl_image_tag recipe.image.key, class:"card-recipe-image"%>
       <% end %>
