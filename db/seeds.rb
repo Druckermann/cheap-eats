@@ -65,7 +65,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/d
 deal_3.image.attach(io: file, filename: 'lean-beef-mince.jpg')
 deal_3.save
 
-deal_4 = Deal.create(name: "Monterey Jack Cheese", business_id: 6, category: "Dairy", price: "0.97", description: "Found a great deal on Monterey Jack cheese for $0.97 at Costco Docklands", start_date: "2023-05-24", end_date: "2023-05-31", user_id: 2, submission_date: "2023-05-23 09:52")
+deal_4 = Deal.create(name: "Monterey Jack Cheese", business_id: 6, category: "Dairy", price: "0.97", description: "Found a great deal on Monterey Jack cheese for $0.97 at Costco Docklands", start_date: "2023-05-24", end_date: "2023-05-31", user_id: 2, submission_date: "2023-05-26 09:52")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/cheese_h3epxw.jpg')
 deal_4.image.attach(io: file, filename: 'jack-cheese.jpg')
 deal_4.save
@@ -123,7 +123,6 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/r
 recipe_2.image.attach(io: file, filename: 'crunch-drumsticks.jpg')
 recipe_2.save
 
-
 recipe_3 = Recipe.create(
   name: "Baked Chicken Drumsticks",
   description: "Perfect for a Sunday lunch or even a weeknight meal.",
@@ -136,9 +135,6 @@ recipe_3 = Recipe.create(
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/baked-chicken-drumsticks_lop02e.jpg')
 recipe_3.image.attach(io: file, filename: 'baked-drumsticks.jpg')
 recipe_3.save
-
-deal_1.recipes = [recipe_1, recipe_2, recipe_3]
-puts "deal_1 recipes associated"
 
 recipe_4 = Recipe.create(
   name: "Roast Chicken Traybake Dinner",
@@ -244,10 +240,6 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/r
 recipe_11.image.attach(io: file, filename: 'beef-rissoles.jpg')
 recipe_11.save
 
-deal_3.recipes = [recipe_7, recipe_8, recipe_9, recipe_10, recipe_11]
-
-puts "deal_3 recipes associated"
-
 recipe_12 = Recipe.create(
   name: "Beef and Gravy Casserole",
   description: "Winter comfort food that is tasty and easy to make. Even the kids will eat it.",
@@ -260,8 +252,6 @@ recipe_12 = Recipe.create(
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/beef-and-gravy_casserole_naj8ot.jpg')
 recipe_12.image.attach(io: file, filename: 'beef-casserole.jpg')
 recipe_12.save
-
-deal_9.recipes = [recipe_12]
 
 recipe_13 = Recipe.create(
   name: "Roast Potatoes",
@@ -288,9 +278,6 @@ recipe_14 = Recipe.create(
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/stuffed-potatoes_qgwgrt.jpg')
 recipe_14.image.attach(io: file, filename: 'stuffed-potatoes.jpg')
 recipe_14.save
-
-deal_4.recipes = [recipe_10, recipe_14, recipe_16, recipe_17]
-puts "deal_4 recipes associated"
 
 recipe_15 = Recipe.create(
   name: "Hasselback Potatoes",
@@ -344,9 +331,13 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/r
 recipe_18.image.attach(io: file, filename: 'potato-salad.jpg')
 recipe_18.save
 
+deal_1.recipes = [recipe_1, recipe_2, recipe_3]
 deal_2.recipes = [recipe_4, recipe_13, recipe_14, recipe_15, recipe_16, recipe_17, recipe_18]
+deal_3.recipes = [recipe_7, recipe_8, recipe_9, recipe_10, recipe_11]
+deal_4.recipes = [recipe_10, recipe_14, recipe_16, recipe_17]
 deal_8.recipes = [recipe_7, recipe_10, recipe_11, recipe_12, recipe_16]
+deal_9.recipes = [recipe_12]
 
-puts "deal_2 and deal_8 recipes associated"
+puts "deal 1, 2, 3, 4, 8, 9 recipes associated"
 ###########################################################################
 puts "Finished!"
