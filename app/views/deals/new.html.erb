@@ -2,12 +2,12 @@
   <h1 class="title-font title-header">Add a deal</h1>
 </div>
 
-<div class="card">
+<div class="card-recipe-new">
   <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
-    <%= f.input :name, label:"Title", placeholder:"Deal title - (50 characters max)", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :name, label:"Title (50 char. max)", placeholder:"Deal title", input_html: { class: 'f-input-custom' } %>
     <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy], input_html: { class: 'f-input-custom' } %>
     <%= f.input :price, placeholder:"$", input_html: { class: 'f-input-custom' }%>
-    <%= f.input :description, as: :text, input_html: { class: 'f-input-custom' }, placeholder:"Include details such as location, shop name, how left in stock. (150 characters max)" %>
+    <%= f.input :description, label:"Description (150 char. max)", as: :text, input_html: { class: 'f-input-custom' }, placeholder:"Include details such as location, shop name, how many left in stock." %>
     <%= f.input :start_date, label:"Start date (if known)", as: :string,
                 input_html: {
                    class: 'f-input-custom' ,
