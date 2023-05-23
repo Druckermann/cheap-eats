@@ -3,7 +3,7 @@
     <div class="row">
     <!--Home-->
       <div class="col text-center">
-        <%= link_to root_path, id: "home-button", class: "nav-link #{'selected' if current_page?(root_path)}" do %>
+        <%= link_to root_path, "data-nav-button-target": "home", "data-action": "click->nav-button#select", class: "nav-link" do %>
           <i class="fa-solid fa-house nav-icon"></i>
           <br>
           <span class="nav-bar-text <%= 'selected' if current_page?(root_path) %>">Home</span>
@@ -12,10 +12,10 @@
     <!--Deals-->
       <div class="col text-center">
         <div class="dropdown">
-        <a href="#" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(deals_path) || current_page?(new_deal_path) %>"
-              id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <%= raw('<i class="fa-solid fa-dollar-sign nav-icon"></i>') %>
-              <br>
+          <a href="#" data-nav-button-target="deals" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(controller:'deals') %>" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-dollar-sign nav-icon"></i>
+
+            <br>
             <span class="nav-bar-text <%= 'selected' if current_page?(deals_path) || current_page?(new_deal_path) %>">Deals</span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dealsDropdown">
@@ -33,9 +33,9 @@
       <!--Recipes-->
       <div class="col text-center">
         <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(recipes_path) || current_page?(new_recipe_path) || current_page?(favorites_path) %>"
+          <a href="#" data-nav-button-target="recipe" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(controller:'recipes') %>"
             id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= raw('<i class="fa-solid fa-utensils nav-icon"></i>') %>
+            <i class="fa-solid fa-utensils nav-icon"></i>
             <br>
           <span class="nav-bar-text <%= 'selected' if current_page?(destroy_user_session_path) || current_page?(new_user_session_path) %>">Recipes</span>
           </a>
@@ -57,7 +57,7 @@
       </div>
       <!--Profile-->
       <div class="col text-center">
-          <a href="#" class="nav-link" id="profile-button" <%= 'selected' if current_page?(destroy_user_session_path) || current_page?(new_user_session_path) %>
+          <a href="#" data-nav-button-target="profile" data-action="click->nav-button#select" class="nav-link" id="profile-button" <%= 'selected' if current_page?(destroy_user_session_path) || current_page?(new_user_session_path) %>
             data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user nav-icon"></i>
             <br>
@@ -80,7 +80,6 @@
         </div>
       </div>
       </div> -->
-
     </div>
   </div>
 </div>
