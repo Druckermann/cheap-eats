@@ -60,7 +60,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/d
 deal_2.image.attach(io: file, filename: 'white-potato.jpg')
 deal_2.save
 
-deal_3 = Deal.create(name: "Lean Beef Mince", business_id: 3, category: "Meat", price: "3.99", description: "Found lean beef mince on sale for $5.99/kg at Coles Richmond Icon!", start_date: "2023-05-23", end_date: "2023-05-30", user_id: 3, submission_date: "2023-05-24 19:14", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
+deal_3 = Deal.create(name: "Lean Beef Mince", business_id: 3, category: "Meat", price: "3.99", description: "Found lean beef mince on sale for $5.99/kg at Coles Richmond Icon!", start_date: "2023-05-23", end_date: "2023-05-30", user_id: 3, submission_date: "2023-05-26 19:14", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/beef-mince_q6urye.jpg')
 deal_3.image.attach(io: file, filename: 'lean-beef-mince.jpg')
 deal_3.save
@@ -70,7 +70,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/d
 deal_4.image.attach(io: file, filename: 'jack-cheese.jpg')
 deal_4.save
 
-deal_5 = Deal.create(name: "Broccoli", business_id: 7, category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi Abbotsford!", start_date: "2023-05-26", end_date: "2023-06-2", user_id: 4, submission_date: "2023-05-26 08:40")
+deal_5 = Deal.create(name: "Broccoli", business_id: 7, category: "Vegetable", price: "1.18", description: "Stock up on fresh broccoli for only $1.18/kg at Aldi Abbotsford!", start_date: "2023-05-24", end_date: "2023-06-2", user_id: 4, submission_date: "2023-05-26 08:40")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/broccoli_octwgp.png')
 deal_5.image.attach(io: file, filename: 'broccoli.png')
 deal_5.save
@@ -90,7 +90,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195893/d
 deal_8.image.attach(io: file, filename: 'onions.jpg')
 deal_8.save
 
-deal_9 = Deal.create(name: "Beef Rump Steak", business_id: 2, category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-24", end_date: "2023-05-30", submission_date: "2023-05-22 17:00")
+deal_9 = Deal.create(name: "Beef Rump Steak", business_id: 2, category: "Meat", price: "14.99", description: "Get beef rump steak for $14.99/kg at Coles Richmond Traders!", start_date: "2023-05-24", end_date: "2023-05-30", submission_date: "2023-05-25 17:00")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195889/deals/rump-steak_imkmud.jpg')
 deal_9.image.attach(io: file, filename: 'rump-steak.jpg')
 deal_9.save
@@ -288,6 +288,9 @@ recipe_14 = Recipe.create(
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/stuffed-potatoes_qgwgrt.jpg')
 recipe_14.image.attach(io: file, filename: 'stuffed-potatoes.jpg')
 recipe_14.save
+
+deal_4.recipes = [recipe_10, recipe_14, recipe_16, recipe_17]
+puts "deal_4 recipes associated"
 
 recipe_15 = Recipe.create(
   name: "Hasselback Potatoes",

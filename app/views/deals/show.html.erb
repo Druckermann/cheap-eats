@@ -32,14 +32,26 @@
 
 <h2 class="title-font title-header text-start" >Try these recipes...</h2>
 
-<div class="container">
+
+<div class="recipe-container">
   <% @deal.recipes.each do |recipe| %>
-    <div class="card my-2">
-      <h3 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe) %></h3>
-      <% if recipe.image.attached? %>
-        <%= cl_image_tag recipe.image.key, class:"card-recipe-image"%>
-      <% end %>
-      <p class="recipe-description"><%= recipe.description %></p>
-    </div>
+    <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
+      <div class="card-recipe" >
+        <div class="recipe-title">
+          <%= recipe.name %>
+        </div>
+        <div class="card-favorite-button" >
+          <%= render 'favorites/favorite_btn', recipe: recipe %>
+        </div>
+        <% if recipe.image.attached? %>
+          <div class="card-recipe-index-image">
+            <a href="<%= recipe_path(recipe) %>">
+              <%#= render 'favorites/favorite_btn', recipe: recipe %>
+              <%= cl_image_tag recipe.image.key %>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </a>
   <% end %>
 </div>

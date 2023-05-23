@@ -4,23 +4,25 @@
 
 <div class="card">
   <%= simple_form_for @deal, data: { controller: 'flatpickr' }  do |f| %>
-    <%= f.input :name, label:"Title", placeholder:"Deal title - (50 characters max)" %>
-    <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy] %>
-    <%= f.input :price, placeholder:"$"%>
-    <%= f.input :description, as: :text, placeholder:"Include details such as location, shop name, how left in stock. (150 characters max)" %>
+    <%= f.input :name, label:"Title", placeholder:"Deal title - (50 characters max)", input_html: { class: 'f-input-custom' } %>
+    <%= f.input :category, :collection => %w[Meat Fruit Vegetable Dairy], input_html: { class: 'f-input-custom' } %>
+    <%= f.input :price, placeholder:"$", input_html: { class: 'f-input-custom' }%>
+    <%= f.input :description, as: :text, input_html: { class: 'f-input-custom' }, placeholder:"Include details such as location, shop name, how left in stock. (150 characters max)" %>
     <%= f.input :start_date, label:"Start date (if known)", as: :string,
                 input_html: {
+                   class: 'f-input-custom' ,
                 data: {
                   flatpickr_target: "startDate",
                   flatpickr_min_date: Date.today.to_s}
                   } %>
     <%= f.input :end_date, label:"End date (if known)", as: :string,
                 input_html: {
+                  class: 'f-input-custom',
                 data: {
                   flatpickr_target: "endDate",
                   flatpickr_min_date: Date.today.to_s }
                   } %>
-    <%= f.input :image, as: :file %>
-    <%= f.button :submit, class:"btn btn-primary" %>
+    <%= f.input :image, as: :file, input_html: { class: 'f-input-custom' } %>
+    <%= f.button :submit, class:"btn-btn-recipe-new" %>
   <% end %>
 </div>
