@@ -83,8 +83,8 @@
 }
 
 .card-recipe-index-image {
-  width: 270px;
-  height: 100px;
+  width: 225px;
+  height: 88px;
   overflow: hidden;
   flex: 0 0 auto;
   margin: 0 10px;
@@ -135,9 +135,9 @@
 
 .card-recipe-show-description{
   flex: 0 0 auto;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  //margin-bottom: 5px;
   margin-top: 10px;
+  align-items: center;
 }
 
 .card-recipe-show-middle{
@@ -153,8 +153,11 @@
 .card-favorite-button-show {
   height: 44px;
   width: 44px;
-  margin-left: 30px;
+  //margin-left: 30px;
   margin-top: 20px;
+  position: relative;
+  margin-top: auto;
+  margin-right: 3px;
 }
 
 .f-input-custom {
@@ -175,7 +178,7 @@
   border-color: #23CAEB;
   border-radius: 10px;
   justify-content: center;
-  width: 270px;
+  width: 233px;
   // max-width: 250px;
 }
 
@@ -187,7 +190,7 @@
   color: #5023EB;
   border-radius: 10px;
   background-color: #23CAEB;
-  width: 355px;
+  width: 300px;
   text-align: center;
   font-weight: bold;
 }
