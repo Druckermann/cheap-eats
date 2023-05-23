@@ -1,56 +1,33 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    const currentPath = window.location.pathname;
-    const buttonPath = this.element.getAttribute("href");
-// console.log(currentPath)
-console.log(this.element)
-// console.log(buttonPath)
-    // if (currentPath === buttonPath) {
-    //   this.element.classList.add("selected");
-    // }
+  static targets = [ "home", "deals", "recipe", "profile" ]
 
-    // AT: Working but could tidy up by having consistent name format below - would also need to change in _navbar.html.erb
-const homePath = document.getElementById("home-button")
-const dealsPath = document.getElementById("dealsDropdown")
-const recipePath = document.getElementById("recipeDropdown")
-const profilePath = document.getElementById("profile-button")
-    homePath.addEventListener("click", () => {
-      const navLinks = document.querySelectorAll(".nav-link");
-      console.log(navLinks)
-      navLinks.forEach(navLink => {
-        navLink.classList.remove("selected");
-      });
-console.log(this)
-      homePath.classList.add("selected");
+  connect() {
+    const pathname = window.location.pathname
+    const url = pathname.split("/")
+    const controller = url[1]
+
+    if (pathname == "/") {
+      this.homeTarget.classList.add("selected")
+    }
+
+    if (controller == "deals") {
+      this.dealsTarget.classList.add("selected")
+    }
+
+    if (controller == "recipes" || controller == "favorites") {
+      this.recipeTarget.classList.add("selected")
+    }
+  }
+
+  navLinks = document.querySelectorAll(".nav-link");
+
+  select(event) {
+    this.navLinks.forEach(navLink => {
+      navLink.classList.remove("selected");
     });
-    dealsPath.addEventListener("click", () => {
-      const navLinks = document.querySelectorAll(".nav-link");
-      console.log(navLinks)
-      navLinks.forEach(navLink => {
-        navLink.classList.remove("selected");
-      });
-console.log(this)
-      dealsPath.classList.add("selected");
-    });
-    recipePath.addEventListener("click", () => {
-      const navLinks = document.querySelectorAll(".nav-link");
-      console.log(navLinks)
-      navLinks.forEach(navLink => {
-        navLink.classList.remove("selected");
-      });
-console.log(this)
-      recipePath.classList.add("selected");
-    });
-    profilePath.addEventListener("click", () => {
-      const navLinks = document.querySelectorAll(".nav-link");
-      console.log(navLinks)
-      navLinks.forEach(navLink => {
-        navLink.classList.remove("selected");
-      });
-console.log(this)
-      profilePath.classList.add("selected");
-    });
+
+    event.currentTarget.classList.add("selected")
   }
 }
