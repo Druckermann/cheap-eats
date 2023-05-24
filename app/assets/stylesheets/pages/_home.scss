@@ -1,52 +1,35 @@
-.home-page {
+.home-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
+  justify-content:space-between;
   background-color: $light-blue;
 }
-.home-container {
-  padding: 0;
-}
 
-#home-logo {
-  width: 100%;
-  height: auto;
-}
-
-.logo-container {
+.home-top-container {
   display: flex;
-  // margin-bottom: auto;
   justify-content: center;
-  align-items: flex-end; /* Align the logo to the bottom */
-  height: 260px;
 }
 
-.middle-container {
-  display: flex;
-  align-items: center; /* Center the text vertically */
-  margin-bottom: 264px;
+.home-mid-container {
   padding: 12px;
 }
 
-// Big buttons to get things started for new users
-.starters-container {
-  position: absolute;
-  bottom: 56px;
+.home-bot-container {
+  padding-bottom: 54px;
 }
+
 .home-starters-btn {
   display: block;
   height: 80px;
-  // width: 100%;
+  margin: 12px;
   background-color: $mid-blue;
   padding: 10px 20px;
   border-radius: 10px;
-  margin: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .home-starters-text {
   color: $purple;
   font-size: 1.5em;
