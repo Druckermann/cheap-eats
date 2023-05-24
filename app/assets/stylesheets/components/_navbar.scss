@@ -54,11 +54,11 @@
 
 
 
-// AT: No idea why this is here - potential conflict? 19/05/23
+// AT: This ensures that nothing is hidden behind the navbar
 body {
-  padding-bottom: 60px;
+  padding-bottom: 56px;
 }
-//
+
 
 .dropdown-item {
   color: $purple;

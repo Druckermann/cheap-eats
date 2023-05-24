@@ -1,21 +1,30 @@
-<div class="home-page">
-  <div class="container home-container logo-container">
-    <img src="https://res.cloudinary.com/dpl1wgx0u/image/upload/v1684824557/Cheap%20Eats%20misc/ce-home-logo-lg_us13pz.png" id="home-logo">
+<%# Whole page %>
+<div class="home-container">
+
+  <%# Top div %>
+  <div class="home-top-container">
+   <img src="https://res.cloudinary.com/dpl1wgx0u/image/upload/v1684824557/Cheap%20Eats%20misc/ce-home-logo-lg_us13pz.png" id="home-logo">
   </div>
-  <div class="container home-container middle-container">
-    <span>Cheap Eats helps you find great deals on basic ingredients like fruit, vegetables, meat, dairy and pasta. <br>
-    If you're not sure how to use them in the kitchen we've got recipes to help!</span>
+
+  <%# Middle div %>
+  <div class="home-mid-container">
+    <span>
+    Cheap Eats helps you find amazing deals on essential ingredients such as fruit, vegetables, meat, dairy and pasta. <br><br>
+    If you're not sure how to use them in the kitchen we've got you covered with a range of healthy recipes. <br><br>
+    So find a deal, grab a recipe and eat better for less!
+    </span>
   </div>
-  <div class="container home-container starters-container">
-    <div>
-        <a href="<%= deals_path %>" class="home-starters-btn title-font">
-          <span class="home-starters-text">Find a deal</span>
-          <i class="fas fa-chevron-right home-starters-icon"></i>
-        </a>
-        <a href="<%= recipes_path %>" class="home-starters-btn title-font">
-          <span class="home-starters-text">Grab a recipe</span>
-          <i class="fas fa-chevron-right home-starters-icon"></i>
-        </a>
-    </div>
+
+  <%# Bottom div %>
+  <div class="home-bot-container">
+    <a href="<%= deals_path %>" class="home-starters-btn title-font">
+      <span class="home-starters-text">Find a deal</span>
+      <i class="fas fa-chevron-right home-starters-icon"></i>
+    </a>
+    <a href="<%= recipes_path %>" class="home-starters-btn title-font">
+      <span class="home-starters-text">Grab a recipe</span>
+      <i class="fas fa-chevron-right home-starters-icon"></i>
+    </a>
   </div>
+
 </div>
