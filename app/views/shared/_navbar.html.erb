@@ -12,9 +12,8 @@
     <!--Deals-->
       <div class="col text-center">
         <div class="dropdown">
-          <a href="#" data-nav-button-target="deals" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(controller:'deals') %>" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" data-nav-button-target="deals" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret" id="dealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-dollar-sign nav-icon"></i>
-
             <br>
             <span class="nav-bar-text <%= 'selected' if current_page?(deals_path) || current_page?(new_deal_path) %>">Deals</span>
           </a>
@@ -33,7 +32,7 @@
       <!--Recipes-->
       <div class="col text-center">
         <div class="dropdown">
-          <a href="#" data-nav-button-target="recipe" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret <%= 'selected' if current_page?(controller:'recipes') %>"
+          <a href="#" data-nav-button-target="recipe" data-action="click->nav-button#select" class="nav-link dropdown-toggle no-caret"
             id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-utensils nav-icon"></i>
             <br>
