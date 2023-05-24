@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up</h2>
 
 <div class="container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -8,24 +8,26 @@
       <%= f.input :username,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "username" }%>
+                  input_html: { autocomplete: "username" }, input_html: { class: 'f-input-custom' }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  input_html: { autocomplete: "email" }, input_html: { class: 'f-input-custom' }%>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password" }, input_html: { class: 'f-input-custom' } %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password" }, input_html: { class: 'f-input-custom' } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class:"btn-btn-recipe-new" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="container" style="margin-top: 20px;">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

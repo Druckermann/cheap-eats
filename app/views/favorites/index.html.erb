@@ -1,6 +1,6 @@
-<h1 class="title-font title-header">Favorite Recipes</h1>
+<h1 class="title-font title-header">Saved Recipes</h1>
 
-<div class="container">
+<div class="recipe-container">
   <% if @recipes.any? %>
     <% @recipes.each do |recipe| %>
         <a href="<%= recipe_path(recipe) %>" style="text-decoration: none;">
