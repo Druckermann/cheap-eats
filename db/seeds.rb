@@ -60,7 +60,7 @@ file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/d
 deal_2.image.attach(io: file, filename: 'white-potato.jpg')
 deal_2.save
 
-deal_3 = Deal.create(name: "Lean Beef Mince", business_id: 3, category: "Meat", price: "3.99", description: "Found lean beef mince on sale for $5.99/kg at Coles Richmond Icon!", start_date: "2023-05-23", end_date: "2023-05-30", user_id: 3, submission_date: "2023-05-26 19:14", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
+deal_3 = Deal.create(name: "Lean Beef Mince", business_id: 3, category: "Meat", price: "3.99", description: "Found lean beef mince on sale for $3.99/kg at Coles Richmond Icon!", start_date: "2023-05-23", end_date: "2023-05-30", user_id: 3, submission_date: "2023-05-26 19:14", url: "https://www.coles.com.au/product/coles-beef-4-star-lean-mince-500g-8850450")
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195888/deals/beef-mince_q6urye.jpg')
 deal_3.image.attach(io: file, filename: 'lean-beef-mince.jpg')
 deal_3.save
@@ -273,7 +273,7 @@ recipe_14 = Recipe.create(
   cook_time: 15,
   prep_time: 5,
   ingredients: "2 potatoes large, 200 g sour cream, 1 spring onion finely chopped, 100 g cheese grated, 1 tsp seasoning of your choice",
-  steps: "1. Microwave potatoes for 3 minutes each on high. Cut potatoes in half and scoop out the middle with a spoon, leaving a thin layer inside. Mix the scooped potato, sour cream, spring onion and 50 g of the cheese in a bowl. Spoon the mixture back into the potatoes and sprinkle the rest of the cheese on top. Place under the grill until golden brown."
+  steps: "1. Microwave potatoes for 3 minutes each on high. 2. Cut potatoes in half and scoop out the middle with a spoon, leaving a thin layer inside. 3. Mix the scooped potato, sour cream, spring onion and 50 g of the cheese in a bowl. 4. Spoon the mixture back into the potatoes and sprinkle the rest of the cheese on top. Place under the grill until golden brown."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/stuffed-potatoes_qgwgrt.jpg')
 recipe_14.image.attach(io: file, filename: 'stuffed-potatoes.jpg')
@@ -286,7 +286,7 @@ recipe_15 = Recipe.create(
   cook_time: 20,
   prep_time: 5,
   ingredients: "4 potatoes, 1 pinch sea salt, 1 tbs olive oil, 1 pinch mixed herbs",
-  steps: "1. Wash the potatoes and pat dry with paper towels. Score each potato every 2 mm vertically, but not all the way to the bottom. Place on a baking tray and drizzle olive oil over each one and then sprinkle with sea salt and fresh or dried herbs. Bake at 200C until cooked all the way through."
+  steps: "1. Wash the potatoes and pat dry with paper towels. Score each potato every 2 mm vertically, but not all the way to the bottom. 2. Place on a baking tray and drizzle olive oil over each one and then sprinkle with sea salt and fresh or dried herbs. 3. Bake at 200C until cooked all the way through."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195577/recipes/hasselback-potatoes_b4ughf.jpg')
 recipe_15.image.attach(io: file, filename: 'hasselback-potatoes.jpg')
@@ -312,7 +312,7 @@ recipe_17 = Recipe.create(
   cook_time: 60,
   prep_time: 10,
   ingredients: "6 potatoes peeled, 600 g pumpkin, 3 carrots chopped, 60 g butter, 100 g spinach, 12 eggs beaten, 200 mL thickened cream, ½ cup cheese grated.",
-  steps: "1. Preheat oven to 180C. Lightly grease a lasagne dish. Cut potatoes, pumpkin and carrots into cubes. Heat butter in frying pan and add the vegetables. Cook covered for 10 minutes, stirring occasionally until golden brown. Add spinach and cook until wilted. Continue to cook until all the liquid has evaporated. Spoon into lasagne dish. Beat eggs and cream until combined. Season with salt or pepper and pour egg mixture over the potatoes and top with cheese. Bake for 35-40 minutes or until golden brown."
+  steps: "1. Preheat oven to 180C. 2. Lightly grease a lasagne dish. 3. Cut potatoes, pumpkin and carrots into cubes. 4. Heat butter in frying pan and add the vegetables. Cook covered for 10 minutes, stirring occasionally until golden brown. 5. Add spinach and cook until wilted. Continue to cook until all the liquid has evaporated. 6. Spoon into lasagne dish. 7. Beat eggs and cream until combined. Season with salt or pepper and pour egg mixture over the potatoes and top with cheese. 8. Bake for 35-40 minutes or until golden brown."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195587/recipes/spinach-and-potato-bake_nm79je.jpg')
 recipe_17.image.attach(io: file, filename: 'spinach-potato-bake.jpg')
@@ -325,7 +325,7 @@ recipe_18 = Recipe.create(
   cook_time: 20,
   prep_time: 30,
   ingredients: "1 ½ kg baby potatoes peeled, 1 bunch spring onions sliced, 350 g bacon diced, 1 jar mayonnaise",
-  steps: "1. Cut potatoes in half. Cook potatoes in boiling water until soft. Drain. Cook bacon pieces and spring onions in a pan. Combine potatoes, bacon and onion in a large salad bowl. Refrigerate until cool. When cooled, add mayonnaise and combine well."
+  steps: "1. Cut potatoes in half. Cook potatoes in boiling water until soft. Drain. 2. Cook bacon pieces and spring onions in a pan. 3. Combine potatoes, bacon and onion in a large salad bowl. 4. Refrigerate until cool. When cooled, add mayonnaise and combine well."
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195576/recipes/potato-salad_kx1lpe.jpg')
 recipe_18.image.attach(io: file, filename: 'potato-salad.jpg')
