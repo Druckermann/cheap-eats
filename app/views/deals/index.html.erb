@@ -10,7 +10,7 @@
 </div>
 <div class="container" style="text-align: left;">
   <% @deals.each do |deal| %>
-    <div class="row my-2">
+    <%# <div class="row"> %>
       <%= link_to deal do %>
       <div class="card">
         <h5 class="d-flex justify-content-between"><%= deal.name %> <span class="font-color-price"><%= "$#{number_to_currency(deal.price, precision: 2, format: "%n")}" %></span></h5>
@@ -34,6 +34,6 @@
         </ul>
       </div>
       <% end %>
-    </div>
+    <%# </div> %>
   <% end %>
 </div>
