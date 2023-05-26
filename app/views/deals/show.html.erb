@@ -30,7 +30,9 @@
   </div>
 </div>
 
-<h2 class="title-font title-header text-start" >Try these recipes...</h2>
+<% if @deal.recipes.any? %>
+  <h2 class="title-font title-header text-start">Try these recipes...</h2>
+<% end %>
 
 <div class="recipe-container">
   <% @deal.recipes.each do |recipe| %>
