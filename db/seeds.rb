@@ -103,7 +103,7 @@ recipe_1 = Recipe.create(
   servings: 4,
   cook_time: 25,
   prep_time: 15,
-  ingredients: '1 tbs sesame oil, 8 chicken drumsticks, 3 cloves garlic thinly sliced, 2 tsp Vegemite, 1/3 cup boiling water, 2 tbs sweet chilli sauce, 2 tbs oyster sauce, 1tbs sweet soy sauce, 2 tbs brown super, 2 tbs rice wine vinegar, 1 long red chilli thinly sliced, 1 bunch steamed Chinese broccoli to serve, steamed jasmine rice to serve.',
+  ingredients: '1 tbs sesame oil, 8 chicken drumsticks, 3 cloves garlic thinly sliced, 2 tsp Vegemite, 1/3 cup boiling water, 2 tbs sweet chilli sauce, 2 tbs oyster sauce, 1 tbs sweet soy sauce, 2 tbs brown sugar, 2 tbs rice wine vinegar, 1 long red chilli thinly sliced, 1 head steamed broccoli to serve, steamed jasmine rice to serve.',
   steps: '1. Heat oil in a large frying pan. Cook chicken, turning, for 5 minutes or until browned all over. Add garlic to pan and cook for 1 minute. 2. Combine Vegemite and boiling water in a small bowl until smooth. Stir in sauces, sugar and vinegar. Add to pan. Bring to a simmer. Simmer, covered, for 10 minutes. Simmer, uncovered, turning chicken occasionally, for 5 minutes or until chicken is cooked through and sauce is sticky. 3. Serve chicken with Chinese broccoli and steamed rice. Drizzle with sauce and sprinkle with chilli.'
 )
 file = URI.open('https://res.cloudinary.com/dpl1wgx0u/image/upload/v1683195588/recipes/sweet-and-sticky_vegemite-chicken_pfjnk8.jpg')
